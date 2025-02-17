@@ -6,9 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction, purpose and scope &#8212; ATBD L2 SSS</title>
+    <title>Introduction, purpose and scope &#8212; CIMR L2PAD Sea Surface Salinity ATBD</title>
   
   
   
@@ -30,13 +30,13 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="_static/styles.css?v=3437f865" />
     <link rel="stylesheet" type="text/css" href="_static/watermark.css?v=80f188f4" />
   
@@ -148,8 +148,8 @@
       
     
     
-    <img src="_static/logo.jpg" class="logo__image only-light" alt="ATBD L2 SSS - Home"/>
-    <img src="_static/logo.jpg" class="logo__image only-dark pst-js-only" alt="ATBD L2 SSS - Home"/>
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="CIMR L2PAD Sea Surface Salinity ATBD - Home"/>
+    <img src="_static/logo.jpg" class="logo__image only-dark pst-js-only" alt="CIMR L2PAD Sea Surface Salinity ATBD - Home"/>
   
   
 </a></div>
@@ -183,8 +183,9 @@
 <li class="toctree-l1"><a class="reference internal" href="algorithm_performance_assessment.html">Algorithm Performance Assessment (Version 2 ATBD)</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="cimr_ocean_retrieval.html">THE CIMR OCEAN RETRIEVAL SYSTEM</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix</a></li>
 </ul>
 
     </div>
@@ -349,10 +350,10 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-purpose-and-scope">
 <h1>Introduction, purpose and scope<a class="headerlink" href="#introduction-purpose-and-scope" title="Link to this heading">#</a></h1>
-<p>The purpose of this Algorithm Theoretical Baseline Document (ATBD) is to establish the procedure that will be used in the CIMR mission to generate the Sea Surface Salinity (SSS) data from brightness temperatures (Tb) recorded by the CIMR L-band radiometer.  The historical satellite SSS “Background” and justification of selected algorithm are first provided. As described in the “Level-2 product definition” section, the output product (CIMR SSS Level 2 SSS product) will consist of files containing half-orbit data (from pole to pole) on a geographical grid (e.g. EASE2-like for Polar Regions, Equal Area Cylindrical projection) defined by the level 1c grid, itself defined by the CIMR Leve1b re-sampling approach.</p>
+<p>The purpose of this Algorithm Theoretical Baseline Document (ATBD) is to establish the procedure that will be used in the CIMR mission to generate the Sea Surface Salinity (SSS) data from brightness temperatures (Tb) recorded by the CIMR L-band radiometer.  The historical satellite SSS <a class="reference internal" href="background_justification_algorithm.html"><span class="std std-doc">Background and justification of selected algorithm</span></a> are first provided. As described in the <a class="reference internal" href="L2_product_definition.html"><span class="std std-doc">Level-2 product definition</span></a>, the output product (CIMR SSS Level 2 SSS product) will consist of files containing half-orbit data (from pole to pole) on a geographical grid (e.g. EASE2-like for Polar Regions, Equal Area Cylindrical projection) defined by the level 1c grid, itself defined by the CIMR Leve1b re-sampling approach.</p>
 <p>As it is not possible to transform the brightness temperatures into SSS through a univocal mathematical expression. L-band emission of the sea surface is computed using a series of mathematical models that have as independent variables the different geophysical parameters (including SSS) that determine this emission. Some of these parameters are obtained from sources external to CIMR (sky maps, atmospheric profiles) or from CIMR data directly (Sea Surface Temperature, surface wind speed,…), and for SSS a guessed value can be considered. The computed Tb, for all observation configurations that correspond to the specific satellite passage, are compared to the measured ones, and then the independent variables are modified in an iterative process until reaching the maximum similarity between both Tb values. The SSS that corresponds to this situation is the value retrieved from CIMR.</p>
-<p>In the “Baseline Algorithm Definition” section, a detailed description of all the parts of the algorithm, the different modules or sub-models that are used to compute the different contributions to sea surface Tb as well as the procedures to compare it with the measured Tb and the iterative convergence method.</p>
-<p>In the Algorithm Input and Output Data Definition, we define all needed input and output data.</p>
+<p>In the <a class="reference internal" href="baseline_algorithm_definition.html"><span class="std std-doc">Baseline Algorithm Definition</span></a> section, a detailed description of all the parts of the algorithm, the different modules or sub-models that are used to compute the different contributions to sea surface Tb as well as the procedures to compare it with the measured Tb and the iterative convergence method.</p>
+<p>In the <a class="reference internal" href="algorithm_input_output_data_definition.html"><span class="std std-doc">Algorithm Input and Output Data Definition</span></a>, we define all needed input and output data.</p>
 <p>The Intergovernmental Oceanographic Commission adopted the new International Thermodynamic Equation of Seawater - 2010 that describes salinity through the Absolute Salinity definition in g/kg instead of Practical Salinity (PS Scale - 78) to take into account the spatial variability of seawater composition and to use IS units. However, measuring systems, both in situ and remotely sensed, will continue being based on conductivity, so all instruments and data bases will deliver practical salinity as before. For historical reasons, all the SSS data processing algorithms presented here use practical salinity regardless of labels in different modules (no units/psu/pss/pss-78). CIMR is a data provider and users may apply the new TEOS-2010 formulae to convert conductivity-based practical salinity to the more correct Absolute Salinity values when appropriate.</p>
 <p>In §9, a Level-2 SSS retrieval prototype algorithm for CIMR is proposed in the form of python codes for the different parts of the algorithm. In §10, the algorithm performance is assessed through end-to-end retrieval simulations and assessment of uncertainties due to several error sources is perform to test how MRD requirements shall be met. A roadmap for future algorithm developments is then given in §1A. References are provided in a last section.</p>
 </section>
@@ -439,7 +440,7 @@ By Joseph Tenerelli (ODL) and Nicolas Reul (IFREMER/LOPS)
     
 <div class="extra_footer">
   <p>
-This ATBD was developed in the context of the ESA-funded CIMR DEVALGO study (2022-2024) (contract 4000137493).
+This ATBD was developed in the context of the ESA-funded CIMR L2PAD study (2024-2026) (contract 4000143081).
 <br>
 ESA is not responsible in any way for the content of this document.
 </p>

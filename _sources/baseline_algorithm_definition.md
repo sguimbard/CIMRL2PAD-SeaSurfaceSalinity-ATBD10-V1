@@ -13,11 +13,11 @@ Major signals received by a Space borne L-band radiometer
 
 
 As illustrated in {numref}`Figure8`, several geophysical parameters other than seawater salinity and temperature contribute significantly to L-band $T_{B}$ measured by satellite sensors at antenna level (e.g., see {cite:t}`yueh2001error`; {cite:t}`Font2004`, {cite:t}`Reul2020`). To properly retrieve SSS, these contributions need to be accurately known and used in corrections of measured, or forward model simulations, of antenna $T_{B}$. 
-They include:  
+They include: 
 * the direct and sea surface reflected/scattered solar and sky emission ({cite:t}`LeVine2005a`; {cite:t}`Reul2007`; {cite:t}`Reul2008b`; {cite:t}`tenerelli2008earth`; {cite:t}`dinnat2008impact`), 
-* the Faraday rotation in the ionosphere ({cite:t}`yueh2000estimates`; {cite:t}`le2002effect`; {cite:t}`vergely2014new`),  
+* the Faraday rotation in the ionosphere ({cite:t}`yueh2000estimates`; {cite:t}`le2002effect`; {cite:t}`vergely2014new`), 
 * the impact of the atmosphere ({cite:t}`liebe1992atmospheric`; {cite:t}`skou2005band`; {cite:t}`wentz2016atmospheric`), and,
-* the effect of sea surface roughness on L-band emissivity ({cite:t}`meissner2014emission`;{cite:t}`meissner2018salinity`; {cite:t}`yin2016roughness`; {cite:t}`yueh2010passive`; {cite:t}`yueh2014aquarius`).   
+* the effect of sea surface roughness on L-band emissivity ({cite:t}`meissner2014emission`;{cite:t}`meissner2018salinity`; {cite:t}`yin2016roughness`; {cite:t}`yueh2010passive`; {cite:t}`yueh2014aquarius`). 
 * the effect of the portion of the energy received due to land or sea ice in the CIMR antenna pattern when the main lobe is over water but close to land-sea or ice-sea transition (e.g., see {cite:t}`Reul2020`,{cite:t}`meissner2021SeaIce`)
 
 The upwelling brightness temperatures above the atmosphere but below the ionosphere (before Faraday rotation) is referred hereafter to as the "Top of Atmosphere" brightness temperature and denoted $T_{tp}^{TOA}$ (with superscript "TOA") for upwelling signal in polarization $p$. Considering all components of the scene brightness temperature at L-band, the complete model solution for $T_{tp}^{TOA}$, in the surface polarization basis, is:
@@ -123,8 +123,7 @@ Level-2 SSS end to end algorithm functional flow diagram. Here $SST^p$, $SSS^p$,
 ```
 
 
-The principle of the proposed SSS retrieval algorithms rely on a forward radiative transfer modelling of the top of the atmosphere brightness $T_{tp}^{TOA}$ from first 
-guess geophysical values (SSS, SST, $U_{10}$, etc...),and, the retrieval of the geophysical parameters (SSS, SWS, ..) from a minimization of the differences between the observed and modelled  $T_{tp}^{TOA}$. The Level-2 end to end algorithm functional flow diagram is shown in {numref}`Sketch1`. The radiative transfer forward model which is needed is based on the following components:
+The principle of the proposed SSS retrieval algorithms rely on a forward radiative transfer modelling of the top of the atmosphere brightness $T_{tp}^{TOA}$ from first guess geophysical values (SSS, SST, $U_{10}$, ...), and, the retrieval of the geophysical parameters (SSS, SWS, ...) from a minimization of the differences between the observed and modelled $T_{tp}^{TOA}$. The Level-2 end to end algorithm functional flow diagram is shown in {numref}`Sketch1`. The radiative transfer forward model which is needed is based on the following components:
 
 -  a sea-water dielectric constant model at 1.4 GHz,
 -  a perfectly flat, or specular, sea surface emission model,
@@ -155,7 +154,7 @@ $$
 ε_{s-dw}(T)=88.0516-4.01796\times10^{-1}\cdot T-5.1027\times10^{-5}\cdot T^2+2.55892\times10^{-5}\cdot T^3
 $$ (eq7)
 
-and $\tau(T)$  is the relaxation time of distilled water:
+and $\tau(T)$ is the relaxation time of distilled water:
 
 $$
 \tau(T)=1.75030\times10^{-11}-6.12993\times10^{-13}\cdot T +1.24504\times10^{-14}\cdot T^2-1.14927\times10^{-16}\cdot T^3
@@ -165,7 +164,7 @@ $R_{sw-dw}(S,T)$ is an additional factor in the static dielectric constant of se
 
 $$
 R_{sw-dw}(S,T)=\displaystyle 1-S\cdot ( 3.97185\times10^{-3}-2.49205\times10^{-5}\cdot T-4.27558\times10^{-5}\cdot S +3.92825\times10^{-7}\cdot S\cdot T+4.15350\times10^{-7}\cdot S^2)
-$$(eq9)
+$$ (eq9)
 
 Note that $\sigma(f,S,T)$ needs to be nulled at $S=0$ since the conductivity of distilled water is close to 0. The expression of 
 $\sigma(f,S,T)$ given in {cite:t}`zhou2021seawater` is:
@@ -219,7 +218,7 @@ Front view of the PALS radiometer instrument measuring the brightness temperatur
 
 The dependence of the microwave brigthness temperature emitted by the sea surface $T_{B}$ on SSS is contained in the emissivity, $e$: $T_{B} = T \times e$, where $\it{T}$ is the sea surface temperature. The emissivity $e$ is a quantity that depends on physical and chemical properties of the water (e.g. salinity and temperature), observational conditions (incidence angle, electromagnetic frequency, polarization), as well as on the sea surface roughness. 
 
-For a perfectly flat ocean surface the scattered electric and magnetic fields may be expressed in terms of the incident fields. The reflected electric field components $(E_{h}^{'},E_{v}^{'})$  are related to the incident components $(E_{h},E_{v})$ by the diagonal matrix equation:
+For a perfectly flat ocean surface the scattered electric and magnetic fields may be expressed in terms of the incident fields. The reflected electric field components $(E_{h}^{'},E_{v}^{'})$ are related to the incident components $(E_{h},E_{v})$ by the diagonal matrix equation:
 
 $$
 \begin{pmatrix}
@@ -228,7 +227,7 @@ E_{v}^{'}(\theta_s,\phi_s)
 \end{pmatrix}=
 \begin{pmatrix}
 R_{hh}^{(0)} & 0 \\ 
-0 & R_{vv}^{(0)}   
+0 & R_{vv}^{(0)}  
 \end{pmatrix}
 \begin{pmatrix}
 E_{h}(\theta_s,\phi_s-180°) \\ 
@@ -240,7 +239,7 @@ where $(\theta_s,\phi_s)$ is the specular reflection direction for radiation inc
 
 $$
 R_{hh}^{(0)} (S,T_s,\theta_s)=\displaystyle\frac{\cos\theta_s-\sqrt{ε_{sw}(S,T_s)-\sin^2⁡\theta}}{\cos\theta_s+\sqrt{ε_{sw}(S,T_s)-\sin^2⁡θ_s}}
-$$ (eq15)  
+$$ (eq15) 
 
 $$
 R_{vv}^{(0)} (S,T_s,\theta_s)=\displaystyle\frac{ε_{sw}(S,T_s) \cos\theta_s-\sqrt{ε_{sw}(S,T_s)-\sin^2⁡{\theta_s}}}{ε_{sw}(S,T_s) \cos{\theta_s}+\sqrt{ε_{sw}(S,T_s)-\sin^2{\theta_s}}}
@@ -259,7 +258,7 @@ V^{'}
 \begin{pmatrix}
 |R_{hh}^{(0)}|^2 \delta^2 & 0 & 0 & 0 \\ 
 0 & |R_{vv}^{(0)}|^2 \delta^2 & 0 & 0 \\
-0 & 0 & \Re (R_{hh}^{(0)}(R_{vv}^{(0)})^{\ast})  & \Im{(R_{hh}^{(0)}(R_{vv}^{(0)})^{\ast})} \\
+0 & 0 & \Re (R_{hh}^{(0)}(R_{vv}^{(0)})^{\ast}) & \Im{(R_{hh}^{(0)}(R_{vv}^{(0)})^{\ast})} \\
 0 & 0 & -\Im (R_{hh}^{(0)}(R_{vv}^{(0)})^{\ast}) & \Re{(R_{hh}^{(0)}(R_{vv}^{(0)})^{\ast})}
 \end{pmatrix}
 \begin{pmatrix}
@@ -292,7 +291,7 @@ where $e_{sp,f}^{(0)}$ is the specular emissivity at polarization $p$ and freque
 
 As shown in {numref}`Figure3a`, the specular brightness temperature sensitivity to SSS $\partial T_{esp}/\partial SSS$ increases with decreasing electromagnetic frequency, peaking at ~1 GHz (L-band) and with increasing incidence angle. As the frequency band 1.400 to 1.427 GHz is protected for radio-astronomy observation, it has been used for SSS remote sensing. Given a model for $ε_{sw}(f, S, T)$, in its simplest form, SSS remote sensing, therefore, consists of measuring/estimating the L-band $T_{esp}$ emitted by the perfectly flat ocean surface together with an auxilliary SST. The intersection of the two values on a graph such as shown in {numref}`T0esv_GSW2020_LBand` can then be used to retrieve SSS. 
 
-We used the laboratory-measurement based GSW2020's model for the sea water dielectric constant at L-band to simulate the changes in the specular sea surface brightness temperatures at 1.4 GHz, at V- and H-polarization and for the the CIMR  nominal incidence angle of 53°. The results are shown as a function of sea surface salinity for different representative sea surface temperature values in {numref}`T0esv_GSW2020_LBand`.
+We used the laboratory-measurement based GSW2020's model for the sea water dielectric constant at L-band to simulate the changes in the specular sea surface brightness temperatures at 1.4 GHz, at V- and H-polarization and for the the CIMR nominal incidence angle of 53°. The results are shown as a function of sea surface salinity for different representative sea surface temperature values in {numref}`T0esv_GSW2020_LBand`.
 
 
 ```{figure} T0esv_GSW2020_LBand.png 
@@ -307,7 +306,7 @@ Specular sea surface brightness temperatures at 1.4 GHz, at V- (a) and H- (b) po
 ```
 
 
-As found, the sensitivity of $T_B$ to SSS is quasi-linear for a given SST. $|\partial T_{B}/\partial SSS|$ is greater in V-polarization than in H-polarization and increases with increasing SST. The sensitivity of V-pol $T_B$ to SSS is dropping from -0.93K/pss at $T_s=30°C$ to -0.26K/pss at $T_s=0°C$.  In Artic conditions, $\partial T_{B}/\partial SSS$ ranges in V-polarization from -0.26 K/pss $(T_s=0°C)$ to -0.36 K/pss $(T_s=5°C)$. With an expected CIMR L-band radiometer NEDT~0.3 K, one can therefore expect instrumental noise errors in instantaneous single polarization recordings of~0.3 pss in the tropics ($T_s=30°C$), and ~1 pss in cold seas ($T_s=5°C$). 
+As found, the sensitivity of $T_B$ to SSS is quasi-linear for a given SST. $|\partial T_{B}/\partial SSS|$ is greater in V-polarization than in H-polarization and increases with increasing SST. The sensitivity of V-pol $T_B$ to SSS is dropping from -0.93K/pss at $T_s=30°C$ to -0.26K/pss at $T_s=0°C$. In Artic conditions, $\partial T_{B}/\partial SSS$ ranges in V-polarization from -0.26 K/pss $(T_s=0°C)$ to -0.36 K/pss $(T_s=5°C)$. With an expected CIMR L-band radiometer NEDT~0.3 K, one can therefore expect instrumental noise errors in instantaneous single polarization recordings of~0.3 pss in the tropics ($T_s=30°C$), and ~1 pss in cold seas ($T_s=5°C$). 
 
 
 ### Functionnal flow diagram
@@ -334,11 +333,11 @@ $$ (eq:rough1)
 where the emission change caused by ocean roughness $\Delta e_{rp}^{rough}$ is a function of the radiometer frequency $f$, incidence angle $\theta_s$ and azimuth $\phi_r$, the surface temperature $T_s$, salinity $S$, 10-meter height wind speed $U_{10}$, and the downwind direction $\phi_w$. Here the linearly polarized electric field components normal to the propagation direction, $E_h$ and $E_v$, are defined with respect to polarization basis vectors at the target given by ${\bf\hat{h}}$ and ${\bf\hat{v}}$. These basis vectors, in turn, are defined such that the surface emission propagation direction unit vector ${\bf\hat{k}}={\bf\hat{v}}\times{\bf\hat{h}}$. Under this *forward scattering alignment* (FSA) polarization basis convention,the relative azimuth angle $\phi_s$ that appears in the rough surface emission contribution is defined as $\phi_s=\phi_r - \phi_w$, which is the difference between the radiometer azimuth $\phi_r$ (measured counterclockwise from due east and from the perspective of an observer looking towards the radiometer from the target) and the downwind direction (towards which the wind is blowing, positive counterclockwise from due east). In the literature, azimuthal harmonics are typically presented as a function of $\phi_w - \tilde\phi_r$ where $\tilde\phi_r=\phi_r + 180^\circ$ is the radiometer look direction, although frequently the convention is not clearly stated.
 
 
-Wind-induced surface waves are the primary contributor to ocean surface roughness, with internal waves, wind-current interactions, and ship wakes to be important but secondary contributors ({cite:t}`Gasiewski1994`). Wind-induced waves can be divided into two primary scales ({cite:t}`yueh1997`):  
+Wind-induced surface waves are the primary contributor to ocean surface roughness, with internal waves, wind-current interactions, and ship wakes to be important but secondary contributors ({cite:t}`Gasiewski1994`). Wind-induced waves can be divided into two primary scales ({cite:t}`yueh1997`): 
 
 1. The **large-scale waves** cause the local surface incidence angle to differ from the effective earth incidence angle, and mix vertical and horizontal polarizations ({cite:t}`Gasiewski1994`), and,
  
-2. The **small-scale gravity-capillary** waves riding on top the large-scale gravity waves ({cite:t}`john:zhang99`):  the small-scale waves modify the specular surface reflection (or emission) through the bistatic scattering of the radiation incident upon the ocean surface. 
+2. The **small-scale gravity-capillary** waves riding on top the large-scale gravity waves ({cite:t}`john:zhang99`): the small-scale waves modify the specular surface reflection (or emission) through the bistatic scattering of the radiation incident upon the ocean surface. 
 
 In addition, although **foam generated by breaking waves and wind streaks** typically covers only a few percent of the sea surface, it has a profound effect on the average microwave brightness of the ocean surface ({cite:t}`droppleman1970`). For surface wind speeds greater than 15 m/s, foam-induced effects may provide as much as half of the total sea surface signature to an orbiting microwave radiometer ({cite:t}`https://doi.org/10.1029/96JC03760`), due to its near-blackbody behavior. As wind speed increases, ocean foam coverage also increases, resulting in a large discrepancy between forward model (e.g., two-scale) emissivity calculations made with and without consideration of foam coverage. The quasi-blackbody models used for both foam emissivity and coverage are in themselves of limited accuracy due to the paucity of in situ observations for both foam coverage and emissivity that have been able to be made in conjunction with brightness temperatures from passive microwave instruments
 
@@ -368,7 +367,7 @@ e_{sv,f}^{(0)}+\Delta e_{v,f}^{(0)} +\Delta e_{v,f}^{(1)} \cos \phi_s +\Delta e_
 \end{equation}
 $$ (eq:rough2)
 
-For natural wind-driven ocean surfaces, the zeroth-harmonic components exist only for vertical ($e_{sv,f}^{(0)}+\Delta e_{v,f}^{(0)}$) and horizontal ($e_{sh,f}^{(0)}+\Delta e_{h,f}^{(0)}$)  polarizations. Upwind and downwind asymmetry features are accounted for in the first-harmonic components ($\Delta e_{h,f}^{(1)}$, $\Delta e_{v,f}^{(1)}$, $\Delta U_{f}^{(1)}$, and $\Delta V_{f}^{(1)}$), and the second-harmonic components ($\Delta e_{h,f}^{(2)}$, $\Delta e_{v,f}^{(2)}$, $\Delta U_{f}^{(2)}$, and $\Delta V_{f}^{(2)}$) account for the upwind-crosswind anisotropy. Such symmetry is expected for reflection-symmetric ocean surfaces although it is not physically guaranteed for all ocean surfaces. Nonetheless, this nominal symmetry allows expansion of the four Stokes components in either cosine or sine Fourier series in the azimuth angle. Truncating these series at the second-azimuthal-harmonic captures virtually all of the currently observable azimuthal brightness behavior. In the present algorithm, we rely on well established empirical Geophysical Model Functions (GMF) for the harmonics coefficients at L-band and associated polarization and incidence angles.
+For natural wind-driven ocean surfaces, the zeroth-harmonic components exist only for vertical ($e_{sv,f}^{(0)}+\Delta e_{v,f}^{(0)}$) and horizontal ($e_{sh,f}^{(0)}+\Delta e_{h,f}^{(0)}$) polarizations. Upwind and downwind asymmetry features are accounted for in the first-harmonic components ($\Delta e_{h,f}^{(1)}$, $\Delta e_{v,f}^{(1)}$, $\Delta U_{f}^{(1)}$, and $\Delta V_{f}^{(1)}$), and the second-harmonic components ($\Delta e_{h,f}^{(2)}$, $\Delta e_{v,f}^{(2)}$, $\Delta U_{f}^{(2)}$, and $\Delta V_{f}^{(2)}$) account for the upwind-crosswind anisotropy. Such symmetry is expected for reflection-symmetric ocean surfaces although it is not physically guaranteed for all ocean surfaces. Nonetheless, this nominal symmetry allows expansion of the four Stokes components in either cosine or sine Fourier series in the azimuth angle. Truncating these series at the second-azimuthal-harmonic captures virtually all of the currently observable azimuthal brightness behavior. In the present algorithm, we rely on well established empirical Geophysical Model Functions (GMF) for the harmonics coefficients at L-band and associated polarization and incidence angles.
 
 ### Wind-induced isotropic emissivity
 
@@ -395,8 +394,8 @@ where the $\delta_k^{p,f}$ coefficients are given in {numref}`table2` for $f = 1
 :name: table2
 | f [GHz] | p | 1 | 2 | 3 | 4 | 5 |
 | :-: | :-: |:-: |:-: |:-: |:-: |:-: |
-|1.4 | v| 1.6097e-3   |  -2.6751e-4 |  2.4483e-5 | -8.6502e-7 | 1.0749e-8 |
-|1.4 | h| 4.3588e-3 | -5.8672e-4 | 4.3997e-5   | -1.4223e-6 |1.6548e-8 |
+|1.4 | v| 1.6097e-3  | -2.6751e-4 | 2.4483e-5 | -8.6502e-7 | 1.0749e-8 |
+|1.4 | h| 4.3588e-3 | -5.8672e-4 | 4.3997e-5  | -1.4223e-6 |1.6548e-8 |
 ```
 
 
@@ -476,7 +475,7 @@ Note that everything above, say 17 m/s, is pretty much guesswork. Some algorithm
 :name: table4
  | f [GHz] | p | 1 | 2 | 3 | 4 | 5 |
  | :-: | :-: |:-: |:-: |:-: |:-: |:-: |
- |1.4 | v|  9.3408423E-02 |-3.3492931E-02	| 3.802560E-03	| -1.6925890E-04	| 2.6396519E-06 |
+ |1.4 | v| 9.3408423E-02 |-3.3492931E-02	| 3.802560E-03	| -1.6925890E-04	| 2.6396519E-06 |
  |1.4 | h| -5.197487E-03 | 1.0855313E-02	| -1.84117E-03	| 9.571413E-05	| -1.605944E-06 | 
  |1.4 | U| -6.5015E-05 | 4.6888E-05 | -7.2679E-06 | 3.5813E-07 | -5.7833E-09 | 
  |1.4 | V| -3.4803E-04 | 1.5574E-04 |-2.0192E-05 |9.3006E-07 | -1.4414E-08| 
@@ -491,7 +490,7 @@ Flowchart of the microwave rough ocean surface emissivity model used in this ATB
 ```
 
 
-## Atmospheric contributions  
+## Atmospheric contributions
 
 Our forward model algorithm for atmospheric corrections for CIMR data consists in:
 - Input co-localized auxiliary atmospheric parameters (pressure, temperature, relative humidity, cloud water,...), obtained from e.g., ECMWF atmospheric forecast model on multiple levels,
@@ -621,7 +620,7 @@ $$
 \quad
 \mbox{[Np m$^{-1}$]},
 \end{eqnarray}
-$$(eqatm13)
+$$ (eqatm13)
 
 or for $b(r)$ in dB.km$^{-1}$ with $f$ in gigahertz,
 
@@ -638,7 +637,7 @@ b(r) = kN'' = \left(\frac{2\pi f}{c}\right)
 \quad
 \mbox{[dB km$^{-1}$]}.
 \end{eqnarray}
-$$(eqatm14)
+$$ (eqatm14)
 
 The real part of the complex wavenumber, $\tilde{k}_r(r)$, is
 
@@ -655,7 +654,7 @@ $$
 \quad
 \mbox{[deg km$^{-1}$]}.
 \end{eqnarray}
-$$(eqatm15)
+$$ (eqatm15)
 
 The variable part of the preceding expression for $\tilde{k}_r(r)$ is
 called the *phase dispersion*, $\beta$, and is approximately
@@ -668,7 +667,7 @@ $$
 \quad
 \mbox{[deg km$^{-1}$]},
 \end{eqnarray}
-$$(eqatm16)
+$$ (eqatm16)
 
 with $f$ expressed in gigahertz and $\tilde{N}_0$ and $\tilde{N}'$
 expressed in ppm. From $\tilde{k}_r$ we can derive the wave
@@ -715,7 +714,7 @@ $$
 = \tilde{N}_D(T_r,e,p_d,f) +\tilde{N}_V(T_r,e,p_d,f) + \tilde{N}_W(T_r,\rho_w,f) + \tilde{N}_I(T_r,\rho_i,f)+ \tilde{N}_R(R,z,f)
 \quad\mbox{[ppm]},\nonumber
 \end{eqnarray}
-$$(eqatm18)
+$$ (eqatm18)
 
 where :
 - $p_d$ and $e$ are the partial pressures of dry air and water vapor (hPa), respectively; 
@@ -727,7 +726,7 @@ $$
 \begin{eqnarray}
 T_r = \frac{300}{T_p},
 \end{eqnarray}
-$$(eqatm19)
+$$ (eqatm19)
 
 where $T_p$ is the physical temperature in kelvin. The indices of refraction are expressed in the MPM93 in terms of the reciprocal temperature, partial pressures of dry air and water vapor (which is a function of relative humidity and temperature), and cloud water and ice densities (not mixing ratios). The molecular oxygen concentration is a function of the partial pressure of dry air, $p_d$ (expressed in hPa), which is approximately equal to the total pressure $p_t$ minus the partial pressure of water vapor $e$:
 
@@ -735,14 +734,14 @@ $$
 \begin{eqnarray}
 p_d = p_t - e,
 \end{eqnarray}
-$$(eqatm20)
+$$ (eqatm20)
 
 Following {cite:p}`Liebe1989`, we introduce the following approximation to the water saturation vapor pressure over a plane surface of water:
 
 $$\begin{eqnarray}
 e_s(T_r) = 2.408\times 10^{11}T_r^5 e^{-22.644 \cdot T_r},
 \end{eqnarray}
-$$(eqatm21)
+$$ (eqatm21)
 
 Using this approximation, the partial pressure of water vapor in hectopascals is
 
@@ -750,7 +749,7 @@ $$
 \begin{eqnarray}
 e(T_r,r_H) = e_s(T_r)\frac{r_H}{100} = \frac{r_H}{100} \cdot 2.408\times 10^{11}T_r^5 e^{-22.644 \cdot T_r},
 \end{eqnarray}
-$$(eqatm22)
+$$ (eqatm22)
 
 where $r_H$ is the relative humidity in percent. 
 
@@ -778,7 +777,7 @@ $$
 \quad\mbox{[ppm]}.
 \label{eq_n_D_tilde}
 \end{eqnarray}
-$$(eqatm23)
+$$ (eqatm23)
 
 The nondispersive term is
 
@@ -787,7 +786,7 @@ $$
 \tilde{N}_d = 0.2588 p_dT_r
 \quad\mbox{[ppm]},
 \end{eqnarray}
-$$(eqatm24)
+$$ (eqatm24)
 
 and the nonresonant term is given by the sum of a relaxation spectrum term $S_\circ F_\circ$ and a term associated with pressure-induced $N_2$ absorption (which makes a small contribution above 100 GHz), $S_nF_n$:
 
@@ -796,7 +795,7 @@ $$
 \tilde{N}_n = S_\circ F_\circ + i S_n F_n
 \quad\mbox{[ppm]},
 \end{eqnarray}
-$$(eqatm25)
+$$ (eqatm25)
 
 with
 
@@ -804,10 +803,10 @@ $$
 \begin{eqnarray}
 S_\circ &=& 6.14\times10^{-5} p_d T_r^2\quad\mbox{[ppm]},\\
 F_\circ &=& -f\left[f+i0.56\times10^{-3}(p_d+e)T_r^{0.8}\right]^{-1},\\
-S_n     &=& 1.4\times10^{-12} p_d^2T_r^{3.5}\quad\mbox{[ppm]},\\
-F_n     &=& f\left[1 + 1.93\times10^{-5}f^{1.5}\right]^{-1}.
+S_n   &=& 1.4\times10^{-12} p_d^2T_r^{3.5}\quad\mbox{[ppm]},\\
+F_n   &=& f\left[1 + 1.93\times10^{-5}f^{1.5}\right]^{-1}.
 \end{eqnarray}
-$$(eqatm26)
+$$ (eqatm26)
 
 In the sum over absorption lines, $\displaystyle\sum_{k=1}^{44} S_kF_k$, the individual line strengths are given by
 
@@ -831,7 +830,7 @@ $$
 \begin{eqnarray}
 \delta_k = 1\times10^{-3}\left(a_5+a_6T_r\right)\left(p_d+e\right)T_r^{0.8},
 \end{eqnarray}
-$$(eqatm29)
+$$ (eqatm29)
 
 where $a_5$ and $a_6$ are constants for each line. The width parameter
 $\gamma_k$ is given by
@@ -976,7 +975,7 @@ $$
 \quad\mbox{[ppm]},
 \label{eq_n_I_tilde}
 \end{eqnarray}
-$$  (eqatm43)
+$$ (eqatm43)
 
 where $\rho_i$ is the ice water density (g.m$^{-3}$). The permittivity of ice, $\epsilon_i$ is given as a function of electromagnetic frequency and reciprocal temperature by
 
@@ -984,7 +983,7 @@ $$
 \begin{eqnarray}
 \epsilon_i = 3.15 + i\left(\frac{a_i}{f} + b_i f\right),
 \end{eqnarray}
-$$  (eqatm44)
+$$ (eqatm44)
 
 where
 
@@ -1006,7 +1005,7 @@ $$
 \begin{eqnarray}
 \tilde{N}_R(R,z,f) &=& R\cdot (0.012 R-3.7)\cdot \displaystyle\frac{y^{2.5}}{f_R(1+y^{2.5})}+i\cdot c_R R^z
 \end{eqnarray}
-$$  (eqatm45a)
+$$ (eqatm45a)
 
 where $R$ is the rain rate in [mm/h], $z$ the altitude, $y=f/f_R$, $f_R=53-R(0.37-0.0015R)$, $c_R=x_1 and $z=x_2\cdot f \cdot y_2$, where $x_1$=3.51e-4, $y_1$=1.03, $x_2$=0.851 and $y_2$=0.158 for f=1.4 GHz.
 
@@ -1082,7 +1081,7 @@ V(r)\\
 \end{matrix}
 \right).\label{eq_satt_i}
 \end{eqnarray}
-$$(eqatm48)
+$$ (eqatm48)
 
 The modified Stokes vector satisfies a similar equation:
 
@@ -1108,7 +1107,7 @@ V(r)\\
 \end{matrix}
 \right).\label{eq_satt_thtv}
 \end{eqnarray}
-$$(eqatm49)
+$$ (eqatm49)
 
 
 ### Atmospheric Emission
@@ -1434,7 +1433,7 @@ $$
 \hat{T}_{ba}(z) &=& a(z) T_p(z),
 \label{eq_atm_tb_rate}
 \end{eqnarray}
-$$(eqatm72)
+$$ (eqatm72)
 
 where $T_p(z_k)$ is the physical temperature at height $z_k$ and $\hat{T}_{bd}(z_k)$ is a brightness temperature *rate* with units of kelvin per meter. The total brightness temperature rate of atmospheric emission at the height $z_k$ is, considering all components,
 
@@ -1442,7 +1441,7 @@ $$
 \begin{eqnarray}
 \hat{T}_{ba}(z_k) = \hat{T}_{bd}(z_k)+\hat{T}_{bv}(z_k)+\hat{T}_{bw}(z_k)+\hat{T}_{bi}(z_k).
 \end{eqnarray}
-$$(eqatm73)
+$$ (eqatm73)
 
 We can then vertically integrate this total brightness temperature rate to derive the upwelling attenuated atmospheric brightness temperature at the top of the atmosphere:
 
@@ -1450,7 +1449,7 @@ $$
 \begin{eqnarray}
 T^{toa}_{ba} = \displaystyle\int\limits_{z'=z_s}^{z_t} \hat{T}_{ba}(z')\exp{\left[-\int\limits_{z''=z'}^{z_t}a(z'')\,dz''\right]}\,dz'
 \end{eqnarray}
-$$(eqatm74)
+$$ (eqatm74)
 
 which in discrete form becomes
 
@@ -1459,7 +1458,7 @@ $$
 T^{toa}_{ba} = \displaystyle\sum_{k=1}^{m} \tau^{(d)}(z_k)T_{bak} = \displaystyle\sum_{k=1}^{m} \tau(z_k,t_t)T_{bak}
 = \displaystyle\sum_{k=1}^{m} \tau(z_k,t_t)a(z_k)T_p(z_k)\Delta{z},
 \end{eqnarray}
-$$(eqatm75)
+$$ (eqatm75)
 
 where
 
@@ -1838,7 +1837,7 @@ V      \\
 \end{matrix}
 \right).
 \end{equation}
-$$(eq:rot2)
+$$ (eq:rot2)
 
 ```{figure} faraday.png
 --- 
@@ -1848,7 +1847,7 @@ Diagram showing how the sense of Faraday rotation depends upon the relative dire
 Also noted is the expected sense of rotation in each hemisphere.
 ```
 
-According to [Equation](eqFara1),  the magnitude of the Faraday rotation angle grows with $1/f^2$. For CIMR-like Earth incidence angles and all typical ocean scenes $Q_{hv}>>U_{hv}$. Therefore, according to [Equation](eq:rot1), for typical values of $\Omega$, the relative impact of Faraday rotation on the third Stokes parameter is much larger than on the second Stokes parameter (vertical and horizontal polarizations). For the CIMR instrument, Faraday rotation plays a significant role only for the third Stokes parameter at 1.4, 6.9 and 10.7 GHz.  At 1.4 GHz, the size of the Faraday rotation is more than 50 times larger than at 10.7 GHz. If not corrected, this would lead to a large relative error in the V- and H-pol brightness temperatures and therefore to inaccurate values for the OWV.
+According to [Equation](eqFara1), the magnitude of the Faraday rotation angle grows with $1/f^2$. For CIMR-like Earth incidence angles and all typical ocean scenes $Q_{hv}>>U_{hv}$. Therefore, according to [Equation](eq:rot1), for typical values of $\Omega$, the relative impact of Faraday rotation on the third Stokes parameter is much larger than on the second Stokes parameter (vertical and horizontal polarizations). For the CIMR instrument, Faraday rotation plays a significant role only for the third Stokes parameter at 1.4, 6.9 and 10.7 GHz. At 1.4 GHz, the size of the Faraday rotation is more than 50 times larger than at 10.7 GHz. If not corrected, this would lead to a large relative error in the V- and H-pol brightness temperatures and therefore to inaccurate values for the OWV.
 
 In order to compute the Faraday rotation for CIMR orbits we assume a spherical earth (radius km) and use the thin layer approximation ({cite:p}`LeVine2000`), which assumes that all electrons are concentrated at the ionospheric layer at an altitude $h_I$=400 km above mean sea level:
 
@@ -1874,10 +1873,7 @@ $$
 \Omega=(K_f⁄f^2 )\cdot \mathrm{VTEC}(h_{S/C},lat_{400},lon_{400})\cdot B_I\cdot \cos⁡\tilde{\theta}\cdot\mathrm{sec}\psi
 $$ (eq207)
 
-where $K_f=1.355\times 10^4\rm{TECU}^{-1}\rm{GHz}^2T^{-1}$, $f$ is the electromagnetic frequency [GHz], VTEC is the vertical total electron content reduced to the satellite altitude
- *$h_{S/C}$* using the formulation of {cite:p}`Floury2007`, $B_I$ is the magnetic field strength [Tesla] evaluated at the ionospheric pierce point (IPP), the point where the ray from the spacecraft to the 
-surface crosses 400 km $(lat_{400},lon_{400})$; $\psi$ is the angle the ray makes with the vertical towards the target and $\tilde{\theta}$ is the angle between the magnetic field vector and the ray from spacecraft to the surface. As shown in {numref}`faraday.png`, this angle is generaly larger than 90° in the northern hemisphere (with negative Ω) and less than 90° in the southern hemisphere (with positive Ω).
-The reduction of VTEC to satellite altitude is formulated as two equations, one (morning) for local time within 6 hours of 6 a.m., and the other (evening) for local times within 6 hours of 6 p.m.
+where $K_f=1.355\times 10^4\rm{TECU}^{-1}\rm{GHz}^2T^{-1}$, $f$ is the electromagnetic frequency [GHz], VTEC is the vertical total electron content reduced to the satellite altitude *$h_{S/C}$* using the formulation of {cite:p}`Floury2007`, $B_I$ is the magnetic field strength [Tesla] evaluated at the ionospheric pierce point (IPP), the point where the ray from the spacecraft to the surface crosses 400 km $(lat_{400},lon_{400})$; $\psi$ is the angle the ray makes with the vertical towards the target and $\tilde{\theta}$ is the angle between the magnetic field vector and the ray from spacecraft to the surface. As shown in {numref}`faraday.png`, this angle is generaly larger than 90° in the northern hemisphere (with negative $\Omega$) and less than 90° in the southern hemisphere (with positive $\Omega$). The reduction of VTEC to satellite altitude is formulated as two equations, one (morning) for local time within 6 hours of 6 a.m., and the other (evening) for local times within 6 hours of 6 p.m.
 
 $$
 \mathrm{VTEC}(z=h_{S/C},lat_{400},lon_{400})=$$ 
@@ -1885,7 +1881,7 @@ $$
 $$\mathrm{VTEC}(z=\infty,lat_{400},lon_{400})\times[(A_m \cdot F_s+B_m )+C_m \cdot \cos⁡(D_m \cdot C_m \cdot lat_{400}\cdot (\pi/180))]
 $$ (eq209)
 
-where $F_s$  is the daily solar flux that can be obtained from daily RSGA files [sfu] and the coefficients $A_m$, $B_m$, $C_m$ and $D_m$ were determined by N. Floury from ESA as provided in Table 5.
+where $F_s$ is the daily solar flux that can be obtained from daily RSGA files [sfu] and the coefficients $A_m$, $B_m$, $C_m$ and $D_m$ were determined by N. Floury from ESA as provided in Table 5.
 The $\mathrm{VTEC}(z=\infty,lat_{400},lon_{400})$ can be obtained from the 1-day forecast produced Centre for Orbit Determination in Europe (CODE), University of Berne, Switzerland. For future reprocessed OVW products, the VTEC can be obtained from IGS consolidated VTEC.
 
 | Coefficient | Morning value (between 00 and 12 LT) | Evening value (between 12 and 24 LT) |
@@ -1894,7 +1890,7 @@ The $\mathrm{VTEC}(z=\infty,lat_{400},lon_{400})$ can be obtained from the 1-day
 |$B_m$ | $8.66\times 10^{-1}[\mathrm{nd}]$ | $8.76\times 10^{-1}[\mathrm{nd}]$ |
 |$C_m$ | $3.75\times 10^{-3}[\mathrm{nd}]$ | $8.98\times 10^{-3}[\mathrm{nd}]$ |
 |$D_m$ | $3.7[\mathrm{deg}^{-1}]$ | $2.03[\mathrm{deg}^{-1}]$ |
-  Table: Coefficients in Floury TEC Altitude Correction
+ Table: Coefficients in Floury TEC Altitude Correction
 
 The Magnetic field vector can be obtained from the 12th generation of the International Geomagnetic Reference Field (IGRF), evaluated at 400 km above the earth's surface along the line of sight using the software provided [here](https://www.ngdc.noaa.gov/IAGA/vmod/igrf12.f), as converted into a callable FORTRAN function available [here](https://gist.github.com/myjr52/62ca6c3e9c78ea0411)
 The function outputs magnetic field strength in nanoTeslas (1e-9 Teslas) which is converted into Gauss (1e-4 Teslas). This model is valid to the year 2020 and should be updated when a new version of the model becomes available.
@@ -1926,7 +1922,7 @@ E'_v
 \end{matrix}
 \right)
 \end{eqnarray}
-$$(eq:rot6)
+$$ (eq:rot6)
 
 and
 
@@ -1958,7 +1954,7 @@ V_{hv} \\
 \end{matrix}
 \right).
 \end{eqnarray}
-$$(eq:rot7)
+$$ (eq:rot7)
 
 Considering both angles together we then have
 
@@ -2016,7 +2012,7 @@ V_{hv}^{TOA} \\
 \end{matrix}
 \right).
 \end{eqnarray}
-$$(eq:rot9)
+$$ (eq:rot9)
 
 and we define the rotation matrix :
 
@@ -2057,7 +2053,7 @@ T_{atm}^{up}+(\tau_d \tau_v \tau_w \tau_I \tau_R)[T_{surf,v}^{tot}+R_{surf,v}^{t
 $$ (eq210)
 where 
 
-- $T_{atm}^{up}$ and $T_{atm}^{dw}$ are the unpolarized upwelling and downwelling brightness temperature of atmospheric 1-way emission which can be derived from [Equation](#eq2) and  [Equation](#eqatm84),
+- $T_{atm}^{up}$ and $T_{atm}^{dw}$ are the unpolarized upwelling and downwelling brightness temperature of atmospheric 1-way emission which can be derived from [Equation](#eq2) and [Equation](#eqatm84),
 - $\tau_d$ is the 1-way atmospheric transmittance associated with molecular oxygen absorption, determined from [Equation](#eqatm71),
 - $\tau_v$ is the 1-way atmospheric transmittance associated with water vapor absorption, determined from [Equation](#eqatm71),
 - $\tau_w$ is the 1-way atmospheric transmittance associated with cloud liquid water absorption, determined from [Equation](#eqatm71),
@@ -2080,44 +2076,24 @@ $$
 \frac{\partial \Omega}{\partial A}=f_{lat}\frac{\cos\theta_s}{r^2}
 $$ (eq210c)
 
-where $\theta_s$ is the incidence angle and $r$ is the range. For a spherical Earth, the leading term $f_{lat}$ would be unity. However, the Earth is modeled as an oblate spheroid and as a consequence this term is a function of latitude, deviating about ±1% from unity. The matrix $G$ is a 4×4 matrix describing the antenna gain function. Each element in this matrix is a function of the look direction $\mathbf{b}$ which  is the unit vector pointing from the antenna to $dA$. The term $\mathbf{\Psi}(\phi)$ is the rotation matrix defined in previous section ([Equation](#eq:rot10)).
+where $\theta_s$ is the incidence angle and $r$ is the range. For a spherical Earth, the leading term $f_{lat}$ would be unity. However, the Earth is modeled as an oblate spheroid and as a consequence this term is a function of latitude, deviating about ±1% from unity. The matrix $G$ is a 4×4 matrix describing the antenna gain function. Each element in this matrix is a function of the look direction $\mathbf{b}$ which is the unit vector pointing from the antenna to $dA$. The term $\mathbf{\Psi}(\phi)$ is the rotation matrix defined in previous section ([Equation](#eq:rot10)).
 
 
 ## Sea Surface Scattered Solar (Sunglint) contributions
 
 ### General Formulation
 
-At L-band, the sun is also a very hot thermal source with effective temperatures on the order of $10^6$ degrees during active periods of the solar cycle ({cite:t}`LeVine2005a`; {cite:t}`Reul2007`) 
-with even higher amplitude emission is reached during solar flares. Even though the sun is relatively small in angular extent, it is such a strong source of radiation at L-band that solar effects remain an 
-important potential sources of uncertainty on salinity retrieval ({cite:t}`LeVine2005a`; {cite:t}`Reul2007`). 	For a real-aperture radiometer such as the Aquarius, SMAP and CIMR radiometers, 
-sun glint (i.e. reflection at the sea surface) impacts the measurements through its contribution to the antenna temperature. Two distinct mechanisms may contribute to the solar radiation intercepted by a radiometer antenna: one is the reflection of solar radiation by the earth-surface (sun glitter or sun glint effects) and the other is the direct leakage into the antenna. 
-Here, we only focus on the modelling for the reflected contamination over the ocean, direct contaminations being addressed by the Level 1 processor.
+At L-band, the sun is also a very hot thermal source with effective temperatures on the order of $10^6$ degrees during active periods of the solar cycle ({cite:t}`LeVine2005a`; {cite:t}`Reul2007`) with even higher amplitude emission is reached during solar flares. Even though the sun is relatively small in angular extent, it is such a strong source of radiation at L-band that solar effects remain an important potential sources of uncertainty on salinity retrieval ({cite:t}`LeVine2005a`; {cite:t}`Reul2007`). For a real-aperture radiometer such as the Aquarius, SMAP and CIMR radiometers, sun glint (i.e. reflection at the sea surface) impacts the measurements through its contribution to the antenna temperature. Two distinct mechanisms may contribute to the solar radiation intercepted by a radiometer antenna: one is the reflection of solar radiation by the earth-surface (sun glitter or sun glint effects) and the other is the direct leakage into the antenna. Here, we only focus on the modelling for the reflected contamination over the ocean, direct contaminations being addressed by the Level 1 processor.
 
-Experimental evidences of the strong sun glitter impacts on the passive microwave sensing of the ocean using L-band radiometers was first given by {cite:t}`swift1` in 1974, who analysed 
-the forward scattering of sun microwave radiation from the Cape Code Canal in Massachusetts.
- Data were collected at 1.4, 4.0, and 7.5 GHz for horizontal and vertical polarisation at a fixed nadir viewing angle of 40°. As the sun passed through the main beam of the antennas, 
- Swift found that the excess temperature due to reflected solar radiation increased dramatically with decreasing frequency and was polarization dependent. The sun was found to be such 
- a dominating source at 1.4 GHz that the horizontally polarized component saturated the radiometer.
-As shown by {cite:t}`Wentz1978`, these sun-glitter effects might be modelled using approximate scattering models to compute the forward scattering of the sun radiations from
- the rough water surface. Sun glitter does not occur frequently in practice. However, when it does, this phenomenon may have severe effects on the brightness temperature signals 
- measured by spaceborne L- band radiometers. Because the antenna boresight of the rotating real-aperture radiometer CIMR will enters the day side of the Earth’s terminator
-  (i.e., the moving curve that divides the daylight side and the dark night side on Earth), the solar effects on the antenna brightness can be of much higher amplitude for this mission, potentially exceeding 15 K.  
-  Observations with large sun glint shall be flagged in the CIMR salinity retrievals but small sunglint signal can be corrected for.
+Experimental evidences of the strong sun glitter impacts on the passive microwave sensing of the ocean using L-band radiometers was first given by {cite:t}`swift1` in 1974, who analysed the forward scattering of sun microwave radiation from the Cape Code Canal in Massachusetts. Data were collected at 1.4, 4.0, and 7.5 GHz for horizontal and vertical polarisation at a fixed nadir viewing angle of 40°. As the sun passed through the main beam of the antennas, Swift found that the excess temperature due to reflected solar radiation increased dramatically with decreasing frequency and was polarization dependent. The sun was found to be such a dominating source at 1.4 GHz that the horizontally polarized component saturated the radiometer. As shown by {cite:t}`Wentz1978`, these sun-glitter effects might be modelled using approximate scattering models to compute the forward scattering of the sun radiations from the rough water surface. Sun glitter does not occur frequently in practice. However, when it does, this phenomenon may have severe effects on the brightness temperature signals measured by spaceborne L- band radiometers. Because the antenna boresight of the rotating real-aperture radiometer CIMR will enters the day side of the Earth’s terminator (i.e., the moving curve that divides the daylight side and the dark night side on Earth), the solar effects on the antenna brightness can be of much higher amplitude for this mission, potentially exceeding 15 K. Observations with large sun glint shall be flagged in the CIMR salinity retrievals but small sunglint signal can be corrected for.
 
- If an incremental rough sea surface area *𝑑𝐴* located within the CIMR antenna field of view is illuminated by the sun radiation along the direction of the
-  unit vector $\vec{n}_o$, part of the intercepted energy might be scattered in the direction $\vec{n}_s$, i.e., toward the
-  radiometer antenna. The solar energy scattered by $dA$ in the direction $\vec{n}_s$ at time *𝑡* and polarization *p* is represented by the radiometric temperatures 
+If an incremental rough sea surface area *𝑑𝐴* located within the CIMR antenna field of view is illuminated by the sun radiation along the direction of the unit vector $\vec{n}_o$, part of the intercepted energy might be scattered in the direction $\vec{n}_s$, i.e., toward the radiometer antenna. The solar energy scattered by $dA$ in the direction $\vec{n}_s$ at time *𝑡* and polarization *p* is represented by the radiometric temperatures 
  
- $$
+$$
 T_{ssp}(\vec{n}_s,t)= \frac{1}{4π\cos⁡{(θ_s)}}\displaystyle\int_{0}^{2\pi}\int_0^{\beta_{sun}/2} [σ_{pp}(\vec{n}_o,\vec{n}_s)+σ_{pq} (\vec{n}_o,\vec{n}_s)]T_{sun}(t,\vec{n}_o)dΩ_{o}
 $$ (eq149a)
 
-where $p$ and $q$ represent the polarizations $H$ or $V$, and $σ_{pp}(\vec{n}_o,\vec{n}_s),σ_{pq}(\vec{n}_o,\vec{n}_s)$ are the bistatic scattering cross-sections of the 
-rough sea surface at 1.4 GHz, at scattered direction $\vec{n}_s$ and incident direction $\vec{n}_o$. The scattering elevation angle is denoted $\theta_s$.
-The integration limits are over the solid angle subtended by the sun where $\beta_{sun}/2$ is the angular radius of the sun as viewed from the earth. 
-At 1.4 GHz, $\beta_{sun}/2$ ≈ 0.293°, which is 10% greater than the optical angular radius ({cite:t}`doi:10.1080/00207216608937868`). $T_{sun}(t,\vec{n}_o)$ is the brightness temperature of the sun at 1.4 GHz in the direction $\vec{n}_o$, 
-and at time *t*. This equation shows that in order to estimate the contamination due to sun glint temperature at a given CIMR pixel with node corresponding to position *T* on the earth surface, 
-determined by the latitude  $\phi$ and longitude $\psi$ of the observer, and at a given time $t$, the following parameters are needed :
+where $p$ and $q$ represent the polarizations $H$ or $V$, and $σ_{pp}(\vec{n}_o,\vec{n}_s),σ_{pq}(\vec{n}_o,\vec{n}_s)$ are the bistatic scattering cross-sections of the rough sea surface at 1.4 GHz, at scattered direction $\vec{n}_s$ and incident direction $\vec{n}_o$. The scattering elevation angle is denoted $\theta_s$. The integration limits are over the solid angle subtended by the sun where $\beta_{sun}/2$ is the angular radius of the sun as viewed from the earth. At 1.4 GHz, $\beta_{sun}/2$ ≈ 0.293°, which is 10$\%$ greater than the optical angular radius ({cite:t}`doi:10.1080/00207216608937868`). $T_{sun}(t,\vec{n}_o)$ is the brightness temperature of the sun at 1.4 GHz in the direction $\vec{n}_o$, and at time *t*. This equation shows that in order to estimate the contamination due to sun glint temperature at a given CIMR pixel with node corresponding to position *T* on the earth surface, determined by the latitude $\phi$ and longitude $\psi$ of the observer, and at a given time $t$, the following parameters are needed :
 
 1. $\vec{n}_s$: the direction (incidence and azimuth angles) of sun radiations at the considered earth surface position and time $T(\phi,\psi,t)$,
 2. $\vec{n}_o$: the direction (incidence and azimuth angles) of observation from CIMR at target $T(\phi,\psi,t)$,
@@ -2125,32 +2101,21 @@ determined by the latitude  $\phi$ and longitude $\psi$ of the observer, and at 
 4. $σ_{hh}(\vec{n}_o,\vec{n}_s),σ_{vv}(\vec{n}_o,\vec{n}_s),σ_{vh}(\vec{n}_o,\vec{n}_s),σ_{hv}(\vec{n}_o,\vec{n}_s)$ : the bistatic scattering coefficients of the sea surface for HH, VV, VH and HV polarizations, respectively, 
 at scattered direction $\vec{n}_s$, incident direction $\vec{n}_o$, and corresponding to the sea state conditions at target $T(\phi,\psi,t)$. 
 
-Parameters 1) can be obtained from accurate ephemerides and parameters 2) are easily deduced from CIMR observation geometry. The main difficulties in estimating $T_{ssp}(\vec{n}_s,t)$ therefore consist in providing accurate estimates 
-for the brightness temperature of the sun at 1.4 GHz and for the sea surface bistatic coefficients at L-band. The brightness temperature of the sun at 1.4 GHz being considered here as an auxiliary parameter, 
-we only focussed on the physical description of the bistatic coefficients model. 
+Parameters 1) can be obtained from accurate ephemerides and parameters 2) are easily deduced from CIMR observation geometry. The main difficulties in estimating $T_{ssp}(\vec{n}_s,t)$ therefore consist in providing accurate estimates for the brightness temperature of the sun at 1.4 GHz and for the sea surface bistatic coefficients at L-band. The brightness temperature of the sun at 1.4 GHz being considered here as an auxiliary parameter, we only focussed on the physical description of the bistatic coefficients model. 
 
-An additional model simplification is used to estimate the amount of solar energy scattered by the sea surface and impinging the CIMR antenna. We assumed than within the solid angle subtended by the sun as seen from any of the 
-observed terrestrial targets, the local sun direction $\vec{n}_o$ is almost constant, so that, at any target *𝑇*, the radiometric sun glint temperatures $T_{ssp}(\vec{n}_s,t)$  of a sunglint Stokes vector component, can be approximated 
-locally at polarisation $p$ and top of the atmosphere, by:
+An additional model simplification is used to estimate the amount of solar energy scattered by the sea surface and impinging the CIMR antenna. We assumed than within the solid angle subtended by the sun as seen from any of the observed terrestrial targets, the local sun direction $\vec{n}_o$ is almost constant, so that, at any target *𝑇*, the radiometric sun glint temperatures $T_{ssp}(\vec{n}_s,t)$ of a sunglint Stokes vector component, can be approximated locally at polarisation $p$ and top of the atmosphere, by:
 
 $$
 T_{ssp}(θ_o,\phi_o,\theta_s,\phi_s )\simeq (\tau_d \tau_v ) \frac{\bar{T}_{sun}(t)Ω_{sun}}{4π\cos⁡{(θ_s)}}\cdot [σ_{pp}(θ_o,\phi_o,\theta_s,\phi_s )+σ_{pq} (\theta_o,\phi_o,\theta_s,\phi_s)]
 $$ (eq150)
 
-where $T_{sun}$ is the brightness temperature of the sun averaged over the solar disc at 1.4 GHz and at time  $t$, $\Omega_{sun}=2\pi\left[1-\cos{(\frac{\beta}{2})}\right]=8.2 \times 10^{-5} sr$ is the solid angle of the sun at L-band,
- The incidence and azimuth angles from the scattering surface toward the sun are $θ_o$ and $\phi_o$, respectively, 
-and the corresponding angles towards the satellite are $θ_s$ and $\phi_s$. Atmospheric attenutaion on the downward path from the sun to 
-the sea surface is accounted for by the factor $\tau_d \tau_v$ expressed in subsection [Atmospheric contributions at L-band](#atmospheric-contributions-at-l-band).
+where $T_{sun}$ is the brightness temperature of the sun averaged over the solar disc at 1.4 GHz and at time $t$, $\Omega_{sun}=2\pi\left[1-\cos{(\frac{\beta}{2})}\right]=8.2 \times 10^{-5} sr$ is the solid angle of the sun at L-band. The incidence and azimuth angles from the scattering surface toward the sun are $θ_o$ and $\phi_o$, respectively, and the corresponding angles towards the satellite are $θ_s$ and $\phi_s$. Atmospheric attenutaion on the downward path from the sun to the sea surface is accounted for by the factor $\tau_d \tau_v$ expressed in subsection [Atmospheric contributions at L-band](#atmospheric-contributions-at-l-band).
 
 
-#### Bistatic scattering cross-sections of the  rough sea surface
+### Bistatic scattering cross-sections of the rough sea surface
 
 
-Key components of the model for sunglint contributions in [Equation (150)](#equation-eq150)  are  the bistatic scattering cross-sections of the 
-rough sea surface, $(σ_{pp},σ_{pq})$. Following the approach in {cite:t}`Reul2007`, we used here the Kirchhoff model (KA) which yields the following expression for the
-bistatic scattering cross section $\sigma^o_{\alpha\alpha_o}$ for
-scattering of the incoming plane waves of polarization $\alpha_o$ into
-the outgoing plane waves of polarization $\alpha$:
+Key components of the model for sunglint contributions in [Equation (150)](#equation-eq150) are the bistatic scattering cross-sections of the rough sea surface, $(σ_{pp},σ_{pq})$. Following the approach in {cite:t}`Reul2007`, we used here the Kirchhoff model (KA) which yields the following expression for the bistatic scattering cross section $\sigma^o_{\alpha\alpha_o}$ for scattering of the incoming plane waves of polarization $\alpha_o$ into the outgoing plane waves of polarization $\alpha$:
 
 $$
 \begin{equation}
@@ -2164,9 +2129,7 @@ $$
 \end{equation}
 $$ (eq151)
 
-In the preceding, ${\bf k_o}$ and ${\bf k_s}$ are the incident and
-scattered radiation wavenumber vectors, respectively, and may be
-expressed in component form as
+In the preceding, ${\bf k_o}$ and ${\bf k_s}$ are the incident and scattered radiation wavenumber vectors, respectively, and may be expressed in component form as
 
 $$
 \begin{eqnarray}
@@ -2179,11 +2142,7 @@ where $({\bf\hat{x}}, {\bf\hat{y}}, {\bf\hat{z}})$ are
 basis vectors for a local cartesian coordinate system centered at the
 scattering surface and $k$ is the wavenumber vector magnitude.
 
-The kernel functions $K_{\alpha\alpha_\circ}(\bf{k_{s}},\bf{k_o})$
-are functions of both the scattering geometry and the dielectric
-constant. Explicit expressions for these kernel functions may be found in
- Analytical expression of these functions 
-for the Kirchhoff Approximation (KA) can be found in  {cite:t}`Voronovich2001` and are provided in [Appendix E](#appendix-e-efficient-implementation-of-bistatic-scattering-coefficients).
+The kernel functions $K_{\alpha\alpha_\circ}(\bf{k_{s}},\bf{k_o})$ are functions of both the scattering geometry and the dielectric constant. Explicit expressions for these kernel functions may be found in Analytical expression of these functions for the Kirchhoff Approximation (KA) can be found in {cite:t}`Voronovich2001` and are provided in [Appendix E](#appendix-e-efficient-implementation-of-bistatic-scattering-coefficients).
 
 
 The Kirchhoff Integral $I_K$ is given in cartesian coordinates by
@@ -2198,28 +2157,17 @@ e^{\displaystyle\left[-i({\bf k_s}-{\bf k_o}) \cdot
 \end{equation}
 $$ (eq153)
 
-The integration domain extends from ${-\infty}$ to $+{\infty}$ in each
-dimension. The vector $\bf{x}$ is the horizontal displacement and the
-integral is evaluated over all possible displacements in the
-horizontal plane.  $q_s={\bf{\hat{z}_e}} \cdot {\bf{k_{s}}}$ and
-$q_\circ=-{\bf{\hat{z}_e}} \cdot {\bf{k_o}}$ are the vertical
-projections of the scattered and incident wavevectors, respectively.
+The integration domain extends from ${-\infty}$ to $+{\infty}$ in each dimension. The vector $\bf{x}$ is the horizontal displacement and the integral is evaluated over all possible displacements in the horizontal plane. $q_s={\bf{\hat{z}_e}} \cdot {\bf{k_{s}}}$ and $q_\circ=-{\bf{\hat{z}_e}} \cdot {\bf{k_o}}$ are the vertical projections of the scattered and incident wavevectors, respectively.
 
- The dielectric constant for seawater at L-band is obtained from GW2020's model. 
-The sea surface elevation function is assumed to be a Gaussian random process, and the correlation function of the ocean surface elevation, $\rho(x)$, is obtained from the Fourier transform 
-of the directional roughness spectrum $W(k)$, which here is given by the wave spectrum model of {cite:t}`Kudryavtsev1999` ({cite:t}`Kudryavtsev2003`,{cite:t}`Kudryavtsev2005`; 
-Appendix A in {cite:t}`Yurovskaya2013`). In the present algorithm, only the isotropic part of the spectrum is considered.
+The dielectric constant for seawater at L-band is obtained from GW2020's model. The sea surface elevation function is assumed to be a Gaussian random process, and the correlation function of the ocean surface elevation, $\rho(x)$, is obtained from the Fourier transform of the directional roughness spectrum $W(k)$, which here is given by the wave spectrum model of {cite:t}`Kudryavtsev1999` ({cite:t}`Kudryavtsev2003`,{cite:t}`Kudryavtsev2005`; Appendix A in {cite:t}`Yurovskaya2013`). In the present algorithm, only the isotropic part of the spectrum is considered.
 
-#### Functionnal flow diagram
+### Functionnal flow diagram
 
 ```{figure} FFD_sunglint.png
 --- 
 name: FFD_sunglint
 ---
-Flowchart of the sunglint model used in this ATBD. Input data are (i) the incidence ($\theta_s$) and azimuth ($\phi_s$) angles of 
-the sun radiations at the considered earth surface position (latitude $\phi$ and longitude $\psi$); (ii) the incidence ($\theta_o$) and azimuth  ($\phi_o$) angles in the direction of
- observation from CIMR at target $T(\phi,\psi,t)$; (iii) $T_{sun}(t,\vec{n}_o)$: the brightness temperature of the sun at 1.4 GHz in the direction $\vec{n}_o$ and at 
- time *t*, and, the SSS, SST, wind speed $U_{10}$, wind direction $\phi_w$ and inverse wave age $\Omega$. Output are the brightness tempearture of the scattered sun radiations towards the radiometer $T_{ssp}$.
+Flowchart of the sunglint model used in this ATBD. Input data are (i) the incidence ($\theta_s$) and azimuth ($\phi_s$) angles of the sun radiations at the considered earth surface position (latitude $\phi$ and longitude $\psi$); (ii) the incidence ($\theta_o$) and azimuth ($\phi_o$) angles in the direction of observation from CIMR at target $T(\phi,\psi,t)$; (iii) $T_{sun}(t,\vec{n}_o)$: the brightness temperature of the sun at 1.4 GHz in the direction $\vec{n}_o$ and at time *t*, and, the SSS, SST, wind speed $U_{10}$, wind direction $\phi_w$ and inverse wave age $\Omega$. Output are the brightness tempearture of the scattered sun radiations towards the radiometer $T_{ssp}$.
 ```
 
 
@@ -2230,9 +2178,7 @@ the sun radiations at the considered earth surface position (latitude $\phi$ and
 
 For a flat ocean the contribution of the reflected galactic radiation to the antenna temperature is given by integrating radiation from the galactic sources and reflected at the ocean surface over the antenna gain pattern. Location and strength of the galactic sources at L-band are taken from the galactic map [{cite:t}`LeVine2004`; {cite:t}`Reul2008b`; {cite:t}`Dinnat2008a`], which was derived from radio-astronomy observations. In actuality, bistatic scattering from a rough ocean will result in galactic radiation entering the mainlobe of the antenna from many different directions. In effect, a rough ocean surface tends to add additional spatial smoothing to the perfectly flat sea surface reflected sky signal. Modeling of this effect is based on the geometric optics (GO) approach, in which the rough surface is modeled as a collection of tilted facets with each facet acting as an independent specular reflector. A crucial input to the GO model is the distribution of the slopes of the tilted facets of the rough ocean surface, which depends on the surface wind speed $U_{10}$. At L-band frequencies, Aquarius, SMAP and SMOS algorithms use the slope variance which represents about a 50\% reduction in the slope variance from the classic Cox and Munk experiment ({cite:t}`Cox1954`), which measured the ocean sun glitter distribution.
 
-Radiation from the galactic background ({cite:t}`LeVine2004`) includes Cosmic Microwave Background (CMB) radiation, which is constant in space and time at 2.7 K, plus hydrogen line emission and continuum radiation from extraterrestrial sources. Both are variable across the sky and can affect the measured brightness values by up to 2 – 3 K in general. The total contribution can however be more than 12 K in the direction of the plane of the galaxy even when smoothed by the aperture of large antennas like CIMR ({cite:t}`tenerelli2008earth`). Galactic radiation reflects at the sea surface into the satellite radiometer aperture, but can be corrected using data obtained from all sky surveys using L-band radiometers ({cite:t}`LeVine2004`; {cite:t}`Dinnat2008a`; {cite:t}`tenerelli2008earth`; {cite:t}`Reul2008b`). In our algorithm we use a similar celestial sky radiation map as is now used in the SMOS level 2 processor but adapted for the central frequency and bandwidth of the CIMR L-band chanels. The GO electromagnetic scattering model is used to quantify the proportion and direction of reflection at the sea surface into the satellite radiometer aperture. We can uniquely represent the rough sea surface scattered sky radiation as a function of six variables:
-$T_{scp}\rightarrow T_{scp} (\alpha_s,\delta_s,\theta_s,\psi_{uh},U_{10},φ_{w})$
-where
+Radiation from the galactic background ({cite:t}`LeVine2004`) includes Cosmic Microwave Background (CMB) radiation, which is constant in space and time at 2.7 K, plus hydrogen line emission and continuum radiation from extraterrestrial sources. Both are variable across the sky and can affect the measured brightness values by up to 2 – 3 K in general. The total contribution can however be more than 12 K in the direction of the plane of the galaxy even when smoothed by the aperture of large antennas like CIMR ({cite:t}`tenerelli2008earth`). Galactic radiation reflects at the sea surface into the satellite radiometer aperture, but can be corrected using data obtained from all sky surveys using L-band radiometers ({cite:t}`LeVine2004`; {cite:t}`Dinnat2008a`; {cite:t}`tenerelli2008earth`; {cite:t}`Reul2008b`). In our algorithm we use a similar celestial sky radiation map as is now used in the SMOS level 2 processor but adapted for the central frequency and bandwidth of the CIMR L-band chanels. The GO electromagnetic scattering model is used to quantify the proportion and direction of reflection at the sea surface into the satellite radiometer aperture. We can uniquely represent the rough sea surface scattered sky radiation as a function of six variables: $T_{scp}\rightarrow T_{scp} (\alpha_s,\delta_s,\theta_s,\psi_{uh},U_{10},φ_{w})$ where
 
 | Variable | Physical Quantity |
 | --- | --- |
@@ -2254,7 +2200,7 @@ Map of the incident Total power from sky radiation at L-band including CMB, Hi-l
 ```
 
 
-The approach used to model the sea surface scattered sky brightness towards the radiometer integrates the sea surface bistatic scattering coefficients at the radiometer frequency over the incident sky brightness temperatures at 1.4 GHz. Consider the case of unpolarized celestial radiation incident at the rough ocean surface scalar brightness temperature $T_{sky}$. The incidence and azumith angles of the incident radiation are $\theta_o$ and $\phi_o$, respectively.  Assuming a simple exponential model for attenuation, the total scattered signal at the surface for component $p$ in the direction $(\theta_s,\phi_s)$ reduces to
+The approach used to model the sea surface scattered sky brightness towards the radiometer integrates the sea surface bistatic scattering coefficients at the radiometer frequency over the incident sky brightness temperatures at 1.4 GHz. Consider the case of unpolarized celestial radiation incident at the rough ocean surface scalar brightness temperature $T_{sky}$. The incidence and azumith angles of the incident radiation are $\theta_o$ and $\phi_o$, respectively. Assuming a simple exponential model for attenuation, the total scattered signal at the surface for component $p$ in the direction $(\theta_s,\phi_s)$ reduces to
 
 $$
 \begin{eqnarray}
@@ -2281,9 +2227,7 @@ T_{scp}(\theta_s,\phi_s, U_{10}, \varphi_w)=
 \end{eqnarray}
 $$ (eq:sg2)
 
-where the dependence of the scattered signal and cross sections on the
-scattering direction is implicit. The total reflectivity at
-polarization $p$ by
+where the dependence of the scattered signal and cross sections on the scattering direction is implicit. The total reflectivity at polarization $p$ by
 
 $$
 \begin{eqnarray}
@@ -2311,10 +2255,7 @@ $$
 \end{equation}
 $$ (eq:sg4)
 
-where $\epsilon_{sw}(S,T_s)$ is the dielectric constant for seawater. $S$ is the salinity and $T_s$ is
-the sea surface temperature.  Note there is no cross-pol reflectivity
-in the flat-surface case, and the reflected signal is obtained by
-integrating over the entire upper hemisphere $\Omega_o$:
+where $\epsilon_{sw}(S,T_s)$ is the dielectric constant for seawater. $S$ is the salinity and $T_s$ is the sea surface temperature. Note there is no cross-pol reflectivity in the flat-surface case, and the reflected signal is obtained by integrating over the entire upper hemisphere $\Omega_o$:
 
 $$
 \begin{eqnarray}
@@ -2335,10 +2276,7 @@ T_{fcp}(\theta_s) &=&
 \end{eqnarray}
 $$ (eq:sg5)
 
-where the Dirac delta function $\delta(\theta_s-\theta_o)$ must be
-normalized by the Jacobian of the transformation, $\sin\theta_o$,
-between solid angle increment and integration increment $d\phi_o
-d\theta_o$, so that
+where the Dirac delta function $\delta(\theta_s-\theta_o)$ must be normalized by the Jacobian of the transformation, $\sin\theta_o$, between solid angle increment and integration increment $d\phi_o d\theta_o$, so that
 
 $$
 \begin{eqnarray}
@@ -2349,13 +2287,11 @@ $$ (eq:sg6)
 
 ### Expression of the sky glint in specular sky coordinates
 
-To obtain the total scattered signal in a given direction, we must
-integrate the brightness temperature contributions from waves incident
-at the target from all directions over the upper hemisphere, so that
+To obtain the total scattered signal in a given direction, we must integrate the brightness temperature contributions from waves incident at the target from all directions over the upper hemisphere, so that
 at polarization $p$, the total scattered signal is
 
 $$
-\begin{equation}       
+\begin{equation}
 {T}_{scp}(\theta_s,\phi_s, U_{10}, \varphi_w) =
 \frac{1}{4\pi\cos{\theta_s}}
 \displaystyle\int_{\Omega_o}
@@ -2396,7 +2332,7 @@ functional dependence of the scattered signal, since we know that the
 dominant source of scattered signal is associated with noise in the
 specular direction. Therefore, we seek to represent the scattered
 signal in terms of the location in the sky of the specular direction,
-which we denote $(\alpha_s,\delta_s)$.  In order to represent the
+which we denote $(\alpha_s,\delta_s)$. In order to represent the
 scattering solution in terms of these variables, we must find a
 mapping between $(\alpha_s,\delta_s)$ and $(\alpha_n,\delta_n)$. This
 mapping will necessarily involve $\theta_s$ and $\phi_s$, so that we
@@ -2408,31 +2344,7 @@ T: (\alpha_n,\delta_n,\theta_s,\phi_s) \rightarrow (\alpha_s,\delta_s,\theta_s,\
 \end{eqnarray}
 $$ (eq:sg8)
 
-where $\theta_s$ is the incidence angle of the specular direction in
-the upper hemisphere, and where we have introduced the angle
-$\psi_{uh}$, which represents the orientation of the upper hemisphere
-at the specular point $(\alpha_s,\delta_s)$. The mapping operator $T$
-can be seen to be that function which rotates the unit normal vector
-in the upper hemisphere frame into the unit vector in the specular
-direction.  $\psi_{uh}$ must be defined so as to allow construction of
-an inverse mapping operator $T^{-1}$ that maps a specular direction
-$(\alpha_s,\delta_s)$ uniquely into an upper hemisphere unit normal
-$(\alpha_n,\delta_n)$. To facilitate a definition of $\psi_{uh}$ we
-first establish alt-azimuth coordinate systems and associated basis
-vectors in both the upper hemisphere and celestial frames along the
-line of sight in the specular direction. The basis vectors are
-analogous to horizontal and vertical polarization basis vectors used
-to describe electromagnetic plane waves. In the upper hemisphere
-frame, which is the topocentric frame whose origin is the surface
-target, we define the 'horizontal' basis vector ${\bf\hat{h}^u} =
-{\bf\hat{n}^u} \times {\bf\hat{r}}/||{\bf\hat{n}^u} \times {\bf\hat{r}}||$, where ${\bf\hat{n}^u}$ is the unit normal to the
-surface at the target and ${\bf\hat{r}}$ is directed outward towards
-the specular direction from the target. Next, we define a 'vertical'
-basis vector by ${\bf\hat{v}^u} = {\bf\hat{h}^u} \times
-{\bf\hat{r}}/||{\bf \hat{h}^u} \times {\bf\hat{r}}||$. If we let
-$\phi^u_s$ and $\theta^u_s$ be the specular azimuth and altitude,
-respectively, of ${\bf\hat{r}}$ in the upper hemisphere frame, then we
-have
+where $\theta_s$ is the incidence angle of the specular direction in the upper hemisphere, and where we have introduced the angle $\psi_{uh}$, which represents the orientation of the upper hemisphere at the specular point $(\alpha_s,\delta_s)$. The mapping operator $T$ can be seen to be that function which rotates the unit normal vector in the upper hemisphere frame into the unit vector in the specular direction. $\psi_{uh}$ must be defined so as to allow construction of an inverse mapping operator $T^{-1}$ that maps a specular direction $(\alpha_s,\delta_s)$ uniquely into an upper hemisphere unit normal $(\alpha_n,\delta_n)$. To facilitate a definition of $\psi_{uh}$ we first establish alt-azimuth coordinate systems and associated basis vectors in both the upper hemisphere and celestial frames along the line of sight in the specular direction. The basis vectors are analogous to horizontal and vertical polarization basis vectors used to describe electromagnetic plane waves. In the upper hemisphere frame, which is the topocentric frame whose origin is the surface target, we define the 'horizontal' basis vector ${\bf\hat{h}^u} = {\bf\hat{n}^u} \times {\bf\hat{r}}/||{\bf\hat{n}^u} \times {\bf\hat{r}}||$, where ${\bf\hat{n}^u}$ is the unit normal to the surface at the target and ${\bf\hat{r}}$ is directed outward towards the specular direction from the target. Next, we define a 'vertical' basis vector by ${\bf\hat{v}^u} = {\bf\hat{h}^u} \times {\bf\hat{r}}/||{\bf \hat{h}^u} \times {\bf\hat{r}}||$. If we let $\phi^u_s$ and $\theta^u_s$ be the specular azimuth and altitude, respectively, of ${\bf\hat{r}}$ in the upper hemisphere frame, then we have
 
 $$
 \begin{eqnarray}
@@ -2442,9 +2354,7 @@ $$
 \end{eqnarray}
 $$ (eq:sg9)
 
-where ${\bf\hat{x}^u}$, ${\bf\hat{y}^u}$, and ${\bf\hat{z}^u}$ are basis vectors for
-the topocentric earth frame that determines the upper hemisphere.
-Analogous basis vectors can be defined in the celestial frame as
+where ${\bf\hat{x}^u}$, ${\bf\hat{y}^u}$, and ${\bf\hat{z}^u}$ are basis vectors for the topocentric earth frame that determines the upper hemisphere. Analogous basis vectors can be defined in the celestial frame as
 
 $$
 \begin{eqnarray}
@@ -2454,13 +2364,9 @@ $$
 \end{eqnarray}
 $$ (eq:sg10)
 
-where $\alpha_s$ and $\delta_s$ are the specular right ascension and
-declination, respectively, of ${\bf\hat{r}}$ in the celestial frame.
+where $\alpha_s$ and $\delta_s$ are the specular right ascension and declination, respectively, of ${\bf\hat{r}}$ in the celestial frame.
 
-If we denote the components of a vector normal to the line-of-sight in
-the upper hemisphere alt-azimuth $({\bf h},{\bf v})$ frame by $(V^{hu},V^{vu})$,
-then its components in the celestial alt-azimuth $({\bf h}-{\bf v}$) frame,
-denoted by $(V^{hc},V^{vc})$, are
+If we denote the components of a vector normal to the line-of-sight in the upper hemisphere alt-azimuth $({\bf h},{\bf v})$ frame by $(V^{hu},V^{vu})$, then its components in the celestial alt-azimuth $({\bf h}-{\bf v}$) frame, denoted by $(V^{hc},V^{vc})$, are
 
 $$ 
 \begin{eqnarray}
@@ -2485,8 +2391,7 @@ V^{vu}
 \end{eqnarray}
 $$ (eq:sg11)
 
-It turns out that the preceding matrix is just a rotation matrix, so we can write
-this transformation as
+It turns out that the preceding matrix is just a rotation matrix, so we can write this transformation as
 
 $$
 \begin{eqnarray}
@@ -2499,7 +2404,7 @@ V^{vc}
 \left(
 \begin{matrix}
 \cos\psi_{uh} & -\sin\psi_{uh}\\
-\sin\psi_{uh} &  \cos\psi_{uh}\\
+\sin\psi_{uh} & \cos\psi_{uh}\\
 \end{matrix}
 \right)
 \left(
@@ -2511,21 +2416,13 @@ V^{vu}
 \end{eqnarray}
 $$ (eq:sg12)
 
-where $\psi_{uh}$ is the angle one must rotate a vector defined in the
-upper hemisphere alt-azimuth frame counterclockwise about the
-line-of-sight in the specular direction to obtain the vector
-components in the celestial sphere alt-azimuth frame.  Equivalently,
-it is the angle one must rotate the alt-azimuth basis vectors
-clockwise to obtain the basis vectors for the celestial alt-azimuth
-frame. This angle is analogous to the Claassen angle in radiometry,
-and, comparing the two previous equations, we see that an explicit
-expression for it is:
+where $\psi_{uh}$ is the angle one must rotate a vector defined in the upper hemisphere alt-azimuth frame counterclockwise about the line-of-sight in the specular direction to obtain the vector components in the celestial sphere alt-azimuth frame. Equivalently, it is the angle one must rotate the alt-azimuth basis vectors clockwise to obtain the basis vectors for the celestial alt-azimuth frame. This angle is analogous to the Claassen angle in radiometry, and, comparing the two previous equations, we see that an explicit expression for it is:
 
 $$ 
 \begin{eqnarray}
 \psi_{uh} = \tan^{-1}\left(\frac{-{\bf\hat{h}^c} \cdot {\bf \tilde{v}^{u}}}{{\bf\hat{h}^c} \cdot {\bf \tilde{h}^{u}}}\right)
 \end{eqnarray}
-$$(eq:sg13)
+$$ (eq:sg13)
 
 where ${\bf \tilde{h}^{u}}$ and ${\bf \tilde{v}^{u}}$ are basis vectors for the
 upper hemisphere frame transformed into the celestial frame by
@@ -2538,9 +2435,7 @@ $$
 \end{eqnarray}
 $$ (eq:sg14)
 
-Note that the arc tangent is here defined such that it returns angles
-in the full [0,360] range.  For convenience we repeat the definition
-of ${\bf T_{ac}}$:
+Note that the arc tangent is here defined such that it returns angles in the full [0,360] range. For convenience we repeat the definition of ${\bf T_{ac}}$:
 
 $$
 \begin{eqnarray}
@@ -2555,20 +2450,7 @@ $$\begin{eqnarray}
 \end{eqnarray}
 $$ (eq:sg16)
 
-The coordinate transformations above are defined in [Appendix F](#appendix-f-coordinate-systems-used-for-sky-glint).
-Given the definition of angle $\psi_{uh}$, it evident that, given the specular location in the celestial sphere,
-$(\alpha_s,\delta_s)$, and given the incidence angle in the specular
-direction in the upper hemisphere along with the orientation angle
-$\psi_{uh}$, rotating a vector from the specular direction by
-$\theta_s$ in the direction $\psi_{uh}$ brings it into the direction
-normal to the target, for which the position in the celestial
-spherical coordinate system is $(\alpha_n,\delta_n)$. Once this normal
-is computed, the latitude and longitude of the target is easily
-derived using the time $t$, and from this location together with the
-specular location in the sky given by $(\alpha_s,\delta_s)$, the
-specular azimuth $\phi_s$ can be computed.  So we see that at some
-time $t$ the complete representation of the scattering geometry is
-given by the set of variables
+The coordinate transformations above are defined in [Appendix F](#appendix-f-coordinate-systems-used-for-sky-glint). Given the definition of angle $\psi_{uh}$, it evident that, given the specular location in the celestial sphere, $(\alpha_s,\delta_s)$, and given the incidence angle in the specular direction in the upper hemisphere along with the orientation angle $\psi_{uh}$, rotating a vector from the specular direction by $\theta_s$ in the direction $\psi_{uh}$ brings it into the direction normal to the target, for which the position in the celestial spherical coordinate system is $(\alpha_n,\delta_n)$. Once this normal is computed, the latitude and longitude of the target is easily derived using the time $t$, and from this location together with the specular location in the sky given by $(\alpha_s,\delta_s)$, the specular azimuth $\phi_s$ can be computed. So we see that at some time $t$ the complete representation of the scattering geometry is given by the set of variables
 
 $$ 
 \begin{eqnarray}
@@ -2576,10 +2458,7 @@ $$
 \end{eqnarray}
 $$ (eq:sg17)
 
-where we have omitted the geophysical variables $w$ and $\varphi'_w$
-that obviously enter into the full scattering problem. So the
-functional form of the scattered signal in some scattering direction
-$(\theta_s,\phi_s)$ (ignoring any wind direction effect) is
+where we have omitted the geophysical variables $w$ and $\varphi'_w$ that obviously enter into the full scattering problem. So the functional form of the scattered signal in some scattering direction $(\theta_s,\phi_s)$ (ignoring any wind direction effect) is
 
 $$
 \begin{eqnarray}
@@ -2590,7 +2469,7 @@ $$ (eq:sg18)
 so the final form for the celestial sky glint is
 
 $$
-\begin{eqnarray}       
+\begin{eqnarray}
 {T}_{scp}(\alpha_s,\delta_s,\theta_s,\psi_{uh},U_{10}) =
 \frac{1}{4\pi\cos{\theta_s}}
 \displaystyle\int_{\Omega_o}
@@ -2607,7 +2486,7 @@ $$ (eq:sg19)
 or, for unpolarized incident sky radiation (which is assumed here),
 
 $$
-\begin{eqnarray}       
+\begin{eqnarray}
 {T}_{scp}(\alpha_s,\delta_s,\theta_s,\psi_{uh},U_{10}) =
 \frac{1}{4\pi\cos{\theta_s}}
 \displaystyle\int_{\Omega_o}
@@ -2621,8 +2500,7 @@ $$ (eq:sg20)
 ### Bistatic Scattering coefficients in the GO approximation
 
 
-The scattered sky radiation is dominated by contributions around the specular directions, so that the scattering cross-sections model can be simplified using the Geometrical Optics approximation for the scattering cross sections (which is valid around the specular direction), for scattering from polarization $q$ into polarization $p$. Before introducing the model it is necessary to define the notation. The polarization basis vectors for the incident and scattered waves in the
-forward scattering alignment basis convention are
+The scattered sky radiation is dominated by contributions around the specular directions, so that the scattering cross-sections model can be simplified using the Geometrical Optics approximation for the scattering cross sections (which is valid around the specular direction), for scattering from polarization $q$ into polarization $p$. Before introducing the model it is necessary to define the notation. The polarization basis vectors for the incident and scattered waves in the forward scattering alignment basis convention are
 
 $$
 \begin{eqnarray}
@@ -2673,7 +2551,7 @@ where $k_0$ is the wavenumber magnitude of the electromagnetic
 radiation. Note the sign change in the definition of $\bf{\hat{k}_o}$
 in terms of ${\bf{k}_o}$, which arises because $\bf{\hat{k}_o}$ points
 away from the origin while the incoming wavevector $\bf{{k}_o}$ points
-towards the origin (in the incident wave propagation direction).  The
+towards the origin (in the incident wave propagation direction). The
 preceding unit vectors have the following cartesian components:
 
 $$
@@ -2712,22 +2590,18 @@ $$
 \end{eqnarray}
 $$ (eq:sg27)
 
-The components of the difference
-between the scattered and incident wavevector components are
+The components of the difference between the scattered and incident wavevector components are
 
 $$
 \begin{eqnarray}
-q_x    &=& k\left(\hat{k}_{ix}+\hat{k}_{sx}\right),\\
-q_y    &=& k\left(\hat{k}_{iy}+\hat{k}_{sy}\right),\\
-q_z    &=& k\left(\hat{k}_{iz}+\hat{k}_{sz}\right),\\
-q      &=& \sqrt{q_x^2+q_y^2+q_z^2}.
+q_x   &=& k\left(\hat{k}_{ix}+\hat{k}_{sx}\right),\\
+q_y   &=& k\left(\hat{k}_{iy}+\hat{k}_{sy}\right),\\
+q_z   &=& k\left(\hat{k}_{iz}+\hat{k}_{sz}\right),\\
+q     &=& \sqrt{q_x^2+q_y^2+q_z^2}.
 \end{eqnarray}
 $$ (eq:sg28)
 
-In order to relate the scattering properties to the surface, we
-need to relate the incident and scattered wave directions to the
-specular surface slope. The cartesian components of the specular facet
-normal vector are proportional to
+In order to relate the scattering properties to the surface, we need to relate the incident and scattered wave directions to the specular surface slope. The cartesian components of the specular facet normal vector are proportional to
 
 $$
 \begin{eqnarray}
@@ -2764,9 +2638,7 @@ S_c  &=& -s_{ny} / s_{nz}.
 \end{eqnarray}
 $$ (eq:sg32)
 
-Letting the mean square slope in the upwind and crosswind directions
-be $\sigma_u^2$ and $\sigma_c^2$, respectively, we now define
-normalized facet slopes as
+Letting the mean square slope in the upwind and crosswind directions be $\sigma_u^2$ and $\sigma_c^2$, respectively, we now define normalized facet slopes as
 
 $$
 \begin{eqnarray}
@@ -2783,10 +2655,7 @@ $$\begin{eqnarray}
 \end{eqnarray}
 $$ (eq155)
 
-where  $A=(\pi k^2 q^2)/(q_z^4)$ and $P$ is the sea surface slope 2D probability distribution function which 
-is taken to be Gaussian in the upwind and crosswind directions, and where  $σ_u^2$ and $σ_c^2$ are the upwind 
-and crosswind  mean square slope which are function of the surface wind speed. The Kirchhoff kernel functions that appear in the cross section models are
-of the form
+where $A=(\pi k^2 q^2)/(q_z^4)$ and $P$ is the sea surface slope 2D probability distribution function which is taken to be Gaussian in the upwind and crosswind directions, and where $σ_u^2$ and $σ_c^2$ are the upwind and crosswind mean square slope which are function of the surface wind speed. The Kirchhoff kernel functions that appear in the cross section models are of the form
 
 $$
 \begin{eqnarray}
@@ -2800,8 +2669,7 @@ $$ (eq:sg35)
 Here, $R_v$ and $R_h$ are the Fresnel reflection coefficients as defined previously.
 
 
-The isotropic slope PDF at any given wind speed is
-assumed to take the form of a truncated series expansion in terms of Gaussian PDFs,
+The isotropic slope PDF at any given wind speed is assumed to take the form of a truncated series expansion in terms of Gaussian PDFs,
 
 $$
 \begin{equation}
@@ -2819,11 +2687,7 @@ P_n(S) = \frac{1}{\pi\sigma_n^2}\exp\left\{-\frac{S_u^2+S_c^2}{\sigma_n^2}\right
 \end{eqnarray}
 $$ (eq:sg37)
 
-The coefficients of the expansion were determined by fitting the model
-to the sky glint obtained from the SMOS reconstructed
-brightness temperatures and the full ocean forward model without sky
-glint included. This model for the cross sections can then be
-expressed as
+The coefficients of the expansion were determined by fitting the model to the sky glint obtained from the SMOS reconstructed brightness temperatures and the full ocean forward model without sky glint included. This model for the cross sections can then be expressed as
 
 $$
 \begin{eqnarray}
@@ -2850,8 +2714,7 @@ T^{g}_p(\Omega_o)
 \end{equation}
 $$ (eq:sg39)
 
-For notational convenience we now introduce the galactic glint basis
-functions,
+For notational convenience we now introduce the galactic glint basis functions,
 
 $$
 \begin{equation}
@@ -2868,8 +2731,7 @@ T^{g}_p(\Omega_o)
 \end{equation}
 $$ (eq:sg40)
 
-or, in terms of the (assumed) Gaussian slope PDFs $P_n(\sigma_n)$ with total
-mean square slopes $\sigma_n$,
+or, in terms of the (assumed) Gaussian slope PDFs $P_n(\sigma_n)$ with total mean square slopes $\sigma_n$,
 
 $$
 \begin{equation}
@@ -2886,8 +2748,7 @@ T^{g}_p(\Omega_o)
 \end{equation}
 $$ (eq:sg41)
 
-In terms of these basis functions, the model galactic glint can be
-compactly expressed as a sum over these basis functions,
+In terms of these basis functions, the model galactic glint can be compactly expressed as a sum over these basis functions,
 
 $$
 \begin{equation}
@@ -2897,16 +2758,9 @@ B_n(\alpha_s,\delta_s,\theta_s,\psi_{uh}).
 \end{equation}
 $$ (eq:sg42)
 
-As discussed above, the galactic glint functions are pre-computed for
-a fixed set of 23 total mean square slope values.  The coefficients
-were determined by fitting the model to the residual sky glint deduced
-from the SMOS brightness temperatures and the ocean forward scene
-brightness model (without galactic glint
-included). Note that the normalized facet slopes are:
+As discussed above, the galactic glint functions are pre-computed for a fixed set of 23 total mean square slope values. The coefficients were determined by fitting the model to the residual sky glint deduced from the SMOS brightness temperatures and the ocean forward scene brightness model (without galactic glint included). Note that the normalized facet slopes are:
 
-This scattering model is using effective sea surface slope variance parameters which are about 50$\%$ less than for optical data ({cite:t}`Cox1954`). 
-These values are consistent with the model used for Aquarius and SMAP ({cite:t}`meissner2018salinity`,{cite:t}`meissner2019`), GNSS-Reflectometry studies at L-band ({cite:t}`Garrison2002`)  and well match the aircraft flight data 
-acquired by the JPL PALS instrument ({cite:t}`Wilson2001`), or during the ESA/COSMOS, campaigns ({cite:t}`Reul2008a`).
+This scattering model is using effective sea surface slope variance parameters which are about 50$\%$ less than for optical data ({cite:t}`Cox1954`). These values are consistent with the model used for Aquarius and SMAP ({cite:t}`meissner2018salinity`,{cite:t}`meissner2019`), GNSS-Reflectometry studies at L-band ({cite:t}`Garrison2002`) and well match the aircraft flight data acquired by the JPL PALS instrument ({cite:t}`Wilson2001`), or during the ESA/COSMOS, campaigns ({cite:t}`Reul2008a`).
 
 #### Functionnal flow diagram
 
@@ -2916,7 +2770,7 @@ name: FFD_galglint
 ---
 Flowchart of the sky glint model used in this ATBD. Input data are (i) the location in the sky of the specular 
 direction with respect to the radiometer look direction, with sky coordinate provided by the specular right ascension $\alpha_s$, specular declination $\delta_s$; (ii) the scattered incidence ($\theta_s$) and 
-azimuth  ($\phi_s$) angles in the direction of observation from earth target $T(\phi,\psi,t)$ towards CIMR; 
+azimuth ($\phi_s$) angles in the direction of observation from earth target $T(\phi,\psi,t)$ towards CIMR; 
 (iii) $T_{sky}(\alpha_s,\delta_s)$: the brightness temperature of the sky at 1.4 GHz in the specular direction
 with respect to the radiometer look direction; and, the SSS, SST, wind speed $U_{10}$, 
 wind direction $\phi_w$ and inverse wave age $\Omega$. Output are the brightness tempearture of the scattered sky
