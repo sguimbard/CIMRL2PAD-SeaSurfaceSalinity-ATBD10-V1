@@ -1,4 +1,4 @@
-# Algorithm Performance Assessment (Version 2 ATBD)
+# Algorithm Performance Assessment
 
 To assess the performance of the previously described OWV retrieval algorithm, we used the SCEPS prototype simulator to generate a very large test card (~6000 km × 4000 km), with 1 km resolution including strong SSS gradients due to the Amazon River plume, and strong surface wind speed gradients with the presence of two hurricanes (see {numref}`Figure25`).
 
@@ -6,14 +6,12 @@ As described in RD.2, the simulator consists of a single statically-linked Linux
 
 The scene brightness includes both the isotropic and anisotropic complete modified Stokes vector ($T_h$, $T_p$, $U$, $V$) in the surface polarization basis. The isotropic part can vary with incidence angle, while, for practical reasons in our analyses, the anisotropic part is assumed to be independent of incidence angle.
 
----
 ```{figure} Figure24.png
 ---
 name: Figure24
 ---
 Schematic of the retrieval algorithm assessment using SCEPS*
 ```
----
 
 A schematic of the overall retrieval algorithm assessment using SCEPS is provided in {numref}`Figure24`. The assessment is based upon these successive steps:
 
@@ -38,13 +36,10 @@ A schematic of the overall retrieval algorithm assessment using SCEPS is provide
 
 5. The noisy simulated resampled CIMR L1b antenna temperature from the scene brightness temperature field are then used for simulation of the future CIMR remapped *'measured L1B Tbs'*.
 
----
 
 ## Geophysical Data Used to Describe the Ocean Scene
 
 The synthetic wind field used to model the scene is a merge between ERA5 re-analyses used as the background wind field, and more local and high-resolution surface winds from Sentinel-1/2 SAR data around two hurricanes. The SSS is from the MERCATOR model. The SST is from ERA5 re-analyses, which were also used to simulate the atmospheric vertical profiles. The test scene includes several coasts to analyze the land-contamination.
-
----
 
 ```{figure} Figure25.png
 ---
@@ -152,9 +147,6 @@ name: Figure29
 ---
 (a): Projection of the L-band, C-band, X-band, and Ku-band feed half-power footprints and boresight locations onto the ground at two closely separated times for three successive scans.
 ```
-
----
-
 In SCEPS, the total antenna temperature integral over all space is separated into several parts, with different integration methods for each:
 
 - Inner domain: Extending from each feed boresight out to a circle (in tilted director cosine coordinates) corresponding to an isotropic directivity of -40 dB relative to the maximum at feed center (HBS).
@@ -163,7 +155,6 @@ In SCEPS, the total antenna temperature integral over all space is separated int
 - Contribution from localized sources: Bright spots in the test card scene (bs).
 - Contribution from the direct sun and moon: Without reflection from the Earth.
 
----
 
 In SCEPS, the default reflector rotation rate is set to the fixed value of 7.8 rpm (clockwise looking towards the instrument along the spin axis from behind the reflector), and the radiometer integration times are set to the values shown in {numref}`tablerecparam`. 
 
@@ -176,7 +167,6 @@ SCEPS can be configured to produce antenna temperatures for only the full measur
 |----|----------|-------|---------|-----------|----------|
 | L   | 1     | 1.4135  | 50.0 | 11.12  | 0.3   |
 ```
-
 
 The reflector rotation rate is sufficiently fast that the antenna patterns move substantially during the measurement integration times, and this must be accounted for when SCEPS is configured to compute antenna temperatures for the full measurements. To do so, SCEPS extends the antenna pattern integration to include integration over the integration time of the receiver.
 
@@ -213,7 +203,6 @@ Simulated TOA L-band brightness temperatures integrated over CIMR antenna patter
 
 Examples of SSS retrieved over the scene is shown in {numref}`Figure31`. In these retrieval simulations, the instrument Tbs were derived by integrating the scene over the full antenna patterns (HBS+outer patterns). SCEPS provides the option to add NEDT noise to the antenna temperatures: we perform retrieval simulations with and without NEDT, and in the following, we present only results with NEDT. As shown in {numref}`Figure31`, the $\Delta SSS=SSS_{retrieved}-SSS_{input}$ fields exhibit high resolution features (North Brazilian current induced SSS fronts and Tropical Cyclone center) which represent area where the retrieved SSS are not well resolved by the ~60 km footprint of CIMR L-band data. The ∆SSS distribution is also skewed with large negative values along the coasts. We analyzed the $\Delta$SSS as a function of distance to nearest coasts in bins of 10 km. As illustrated in {numref}`Figure32`, a significant fresh bias and increased standard deviation of the ∆SSS is observed when the data are acquired at distance to nearest coasts less than ~70 km.
 
----
 ```{figure} Figure31.png
 ---
 name: Figure31
@@ -221,8 +210,6 @@ name: Figure31
  (Top Left) Input 4km resolution SSS field (Top Right) CIMR retrived SSS from SCEPS generated L1C data. (Bottom Left) Differences between input and retrieved SSS (Bottom Right) Histrogram of the differences between input and retrieved SSS.
 ```
 
-
----
 ```{figure} Figure32.png
 ---
 name: Figure32
@@ -237,15 +224,14 @@ The closer to the coast, the higher the fresh bias and standard deviation of the
 name: Figure33
 ---
 Filtered $\Delta$SSS when data with distance to nearest coasts less than 70 km are removed. The histogram of ∆SSS is shown in the right panel.
-````
+```
 
 While a land-contamination correction will be potentially derived from the future CIMR data (e.g., using the approach of Meissner et al. 2017, 2018), flagging/removing the data within a distance of 70 km from the nearest coasts, will solve most of the land-contamination issues. When removing data within 70 km from the coasts, the statistics of the ∆SSS becomes more gaussian with a significantly reduced STD of ~0.2 pss (see {numref}`Figure33`), compared to ~1.7 pss when considering all data including the SSS retrieved within a band of 70 km from nearest coasts (see {numref}`Figure31`).
 
 ## SSS Retrieval simulations: comparison with MRD
 
 As stated in the CIMR MRD, the mission objectives for SSS retrieval are the following:
-“SEC-OBJ-9. Measure Sea Surface Salinity (SSS) over the global ocean from space [AD-
-3],[AD-4] with a target gridded spatial resolution of 40 km and uncertainty $\leq$0.3 pss over monthly time-scales [AD-3]”
+“SEC-OBJ-9. Measure Sea Surface Salinity (SSS) over the global ocean from space [AD-3],[AD-4] with a target gridded spatial resolution of 40 km and uncertainty $\leq$0.3 pss over monthly time-scales [AD-3]”
 
 The accuracy of weekly or monthly SSS products from orbiting satellites depends on the number of satellite passes over a given grid cell within the period of time. To evaluate such number for the CIMR L-band data collected over one month, in the MACRAD project [RD.3], we have conducted a sampling analysis with the satellite instrument retrieval simulator for the mission: the CIMR SCEPS. We estimated the number of L1B samples per day in 0.36°x 0.36° rectangular grid (~40km resolution) boxes for the complete month of January 2029. We reproduced some of the results hereafter.
 
@@ -287,7 +273,7 @@ For individual L-band measurements, the square Root of the Sum of Squares (RSS) 
 name: Figure35
 ---
 RSS of total Tb errors for a) V-polarization; b) H-polarization and c) First Stokes parameter for the 3 wind speed and 4 SST regimes.
-````
+```
 
 The sensor errors include the calibration errors and the radiometer noise-equivalent-delta-T (NEDT). The instrument calibration stability does not include the bias of the instrument calibration errors, and only accounts for the temporal variability of the instrument calibration. It is assumed that the instrument calibration bias is a constant and hence can be removed by a comparative analysis of in-situ measurements. The dominant error sources are the antenna pointing angle, antenna emissivities, and the stability of the calibration device, such as the noise source, for the electronics. The radiometer NEDT is assumed to be 0.3 K for each polarization.
 
@@ -326,70 +312,4 @@ Total number of L-band L1B samples in 0.36°x 0.36° for 1 day (top panel), 1 we
 name: Figure38
 ---
 Median number of L-band L1B samples per 0.36°x0.36° as a function of latitude for 1 week (orange) and 1 month (blue curve).
-```
-
-# Roadmap for future ATBD development
-
-The prototype CIMR Level-2 OWV retrieval algorithm presented in this ATBD is based on several assumptions and simplifications. Several developments and improvements to the prototype algorithm are planned which have the potential to significantly improve the performance of the CIMR Level-2 OWV algorithm. We highlight a few of them in this chapter.
-
-## New Sea water dielectric constant model at L-band
-At the time this ATBD was developed, two up-to-date parametrizations for the sea water dielectric constant at L-band were available, based on one hand, on the Soil Moisture and Ocean Salinity (SMOS) satellite multi-angular brightness temperature measurements by Boutin et al. (2021) (BV), and, on the other hand, on the new George Washington University laboratory measurements by Zhou et al. (2021) (GW2020). These two approaches are fully independent. For most SSS and Sea Surface Temperature (SST) conditions commonly observed over the open ocean, the relative variations of brightness temperatures Tb simulated through the BV and GW2020 parametrizations agree particularly well, and better than with earlier parametrizations previously used in the SMOS, SMAP, and Aquarius SSS retrievals. Being based purely on Laboratory data, we therefore advise the use of GW2020 in the present ATBD. However, uncertainty remains, especially below 10°C where a ∼0.1 K relative difference between the two models is observed. This motivated the development of a revised parameterization, BVZ (Boutin, Vergely, and Zhou (2023)), based on a methodology similar to that used to derive BV but using GW2020 instead of SMOS measurements. Compared to the GW2020 parameterization, BVZ is derived with a reduced number of degrees of freedom, it relies on the TEOS10 PSS78 conductivity-salinity relationship, and on the previously derived static permittivity of fresh water. Noting that this new parametrization significantly improved the SSS retrieval from SMOS in the 5°C–15°C SST range, we advise to update the GW2020 L-band sea water dielectric constant model with this new BVZ model in future algorithm developments for CIMR.
-
-## Incidence angle & SST dependencies of the roughness correction
-The wind induced emissivity model is based on the wind emissivity model of the Aquarius V5 release after extrapolating to the CIMR Earth incidence angle. Small adjustment can be applied to the Aquarius V5 model function due to the fact that the ancillary field used to derive the GMF (CIMR L2 OWV) will be slightly different from the Aquarius HHH wind speed which was used in the Aquarius Version 5 algorithm. Small biases will likely exist between these two ancillary wind fields and are dependent on wind speed as well as SST. Because of the high level of accuracy that is required for retrieving salinity, these biases needed to be considered when deriving the wind induced emissivity model function for CIMR using the method outlined in {cite:p}`meissner2014emission`. As a consequence of the slightly different ancillary wind speed inputs to the Aquarius Version 5 and CIMR salinity retrieval, the geophysical model functions for the wind emissivities shall also differ slightly. This is most important for the wind speed dependence 0th harmonic coefficient of the wind induced emissivity i.e., the isotropic part. Small differences can be expected at very low and at very high wind speeds. In addition, one can expected slight differences in the SST dependence of the wind induced emissivity. All these adjustments shall be done post-launch, once co-localized CIMR L-band Tbs, SSS, SST and wind data sets will be made available. Alternatively, roughness emission GMFs at 52° can also be directly inferred from SMOS data but at the expense if a higher NEDT in the Tbs.
-
-## Roughness emission azimuthal harmonics in High winds
-
-It remains unclear how the roughness anisotropic emission components (first and second harmonics, see Figure 9 and Figure 10) for all four Stokes parameters behave in high wind speed regimes (say > 20 m/s). Wind-direction signals in passive microwave polarimetry for ocean surfaces under hurricane force winds were however presented in Yueh et al., 2008. They performed analysis of Windsat data for several Atlantic hurricanes from 2003 to 2005. The polarimetric third Stokes parameter observations from the Windsat 10-,18-, and 37-GHz channels were collocated with the ocean-surface winds from the National Oceanic and Atmospheric Administration Hwind analysis. The collocated data were binned as a function of wind speed and wind direction. The 10-GHz data show clear 4-K peak-to-peak directional signals at 50-60-m/s wind speed after correction for atmospheric attenuation. The signals in the 18- and 37-GHz channels were unclear at above 40-m/s wind speeds, probably caused by the impact of clouds and rain. The data were expanded by sinusoidal series of the relative azimuth angles between the Hwind analysis and observation directions. The coefficients of the sinusoidal series suggest decreasing response to wind direction for increasing wind speed, but the 10-GHz data appear to be fairly constant for up to 50-m/s wind speeds. The trend of the high-wind data (> 25 m/s) is, in general, consistent with the characteristics of the lighter wind data. The combined Windsat–GDAS (< 25 m/s) and Windsat–Hwind (> 25 m/s) analyses show that the amplitude of first-harmonic coefficients (U1) increases with increasing wind speed from low to 20 m/s but then saturates and decreases at higher wind speeds. The amplitude of second harmonic coefficients (U2), having a similar feature, increases with wind speed from light to moderately high wind speed (< 15 m/s) and then displays a decreasing trend beyond about 15–20-m/s wind speeds. This feature is consistent with the active microwave observations of hurricanes. This implies that the ocean waves and other roughness features generated by hurricane force winds will start to lose directionality for increasing wind speed beyond 30–50 m/s. The loss of directionality can be due to a wider azimuthal spreading of wave propagation, increasing coverage of sea foam and spray, and the impact of raindrops on the surface roughness. Excessive attenuation by rain, if undercorrected, may further reduce the directional dependence of U. The ocean waves with longer wavelengths having greater influence on the 10, 6 and 1.4-GHz microwaves probably can sustain better directionality at very high winds than the ocean waves with shorter wavelength, which have greater impact on the 18.7- and 36.5-GHz frequencies. Therefore, in future ATBD developments for CIMR, we suggest to decrease the directional harmonics (1 and 2) towards zero for wind speed higher than 20 m/s.
-
-### Simplified Atmospheric Corrections
-
-Our proposed atmospheric corrections rely on the vertical integration of the indexes of refraction from local atmospheric parameter profiles. This may be unpractical for an operational processing in terms of computing time. In this case, we suggest to follow the approach used in AMSR-E ATBD (Wentz and Meissner, 2000), where approximated vertically integrated absorption coefficients can be derived from vertically integrated water vapor, cloud liquid water, and air temperature.
-
-One approximated approach, valid at L-band, is to follow the simplified single layer atmospheric model used in the ESA SMOS Level 2 Ocean Salinity Processor [RD.4]. The atmospheric contributions are approximated by the following formulation in which the emission and absorption are expressed purely in terms of air surface temperature  $T_o$, surface pressure $P_s$, and total column water vapor $V$. In terms of these quantities, the vertically integrated absorption owing to molecular oxygen and water vapor are, respectively:
-
-$$
-A_d = A_d^{(u)} = A_d^{(d)} = 10^{-6} \left( C_{aao}^{(0)} + C_{aao}^{(1)} T_o + C_{aao}^{(2)} P_s + C_{aao}^{(3)} T_o^2 + C_{aao}^{(4)} P_s^2 + C_{aao}^{(5)} T_o P_s \right)
-$$
-
-and
-
-$$
-A_v = A_v^{(u)} = A_v^{(d)} = 10^{-6} \left( C_{aav}^{(0)} + C_{aav}^{(1)} P_s + C_{aav}^{(2)} V \right)
-$$
-
-Where the numerical values for coefficients in this mono-layer model are from the papers of Liebe (1989) and of Liebe et al. (1993).
-
-
-## Needed and Missing Corrections: retrieval in Coastal Areas and Closer to the Sea Ice Edge
-
-The improved resolution of CIMR and stringent beam forming ("distance-to-coast") requirements mean that Level-2 OWV retrievals can be achieved closer to the coastline. Still, coastal regions and water bodies will be challenging for the CIMR Level-2 products when the main beam overlaps different surface types. This can lead to erroneous coastal OWVs. 
-
-Similar challenges exist for retrieval of OWV close to the sea-ice edge. Application of a land-spill over correction and methods for mitigating land contamination (Olmedo et al., 2017; Olmedo et al., 2018) should be investigated, as well as methods to reduce sea-ice contamination (Meissner and Manaster, 2021). It is not fully clear yet at which processing level (1 or 2) the land- and ice-ocean transitions effects shall be corrected for on the $T_B$s (so-called land-sea contamination). Given that these effects require antenna-pattern-related information, it shall better be applied in the Level 1 algorithms.
-
----
-
-## SSS uncertainty estimation
-A detailed analysis of various geophysical error sources that influence the microwave remote sensing of ocean surface salinity with CIMR sensor has been performed in [RD.3]. The error sources include the sea surface temperature, sea surface roughness, atmospheric gases, ionospheric Faraday rotation, solar and galactic emission sources, as well as the brightness temperature contamination at the land-sea or the sea ice -open ocean transitions. Using the SSS retrieval algorithm developed in this document sensitivity analyses for each of the previous potential error sources for the L2 SSS retrievals were performed. Many of them are shown to have an influence of a few Kelvin, which are not negligible compared with the sensitivity of L-band sea surface brightness temperatures to salinity. An accurate knowledge of these parameters is necessary to enable a correction of the microwave measurements to accurately measure SSS. While uncertainty estimate, shall be part of the output product, we have not yet included it into the algorithm. In [RD3], the method we used for formally assessing random and systematic uncertainties in the CIMR SSS retrievals was presented. The method is based on performing multiple retrievals by perturbing the various inputs to the retrieval algorithm and calculating the sensitivity of the CIMR retrieved SSS to these inputs. Together with an error model for the uncertainties in the input parameters it is possible to calculate the uncertainty in the retrieved salinity. Such approach can be used to partition the retrieval errors in different classes of geophysical conditions (cold to warm SSTs,low to high winds etc..). As found, for individual L-band measurements far away from coasts or ice-edges (> 70 kms), the square Root of the Sum of Squares (RSS) of quantity is varying from about 0.5 K to 1.2 K, depending on SST and Wind Speed and on polarization. As found, an accuracy of 0.3 pss is achievable for a monthly average gridded data set for CIMR polar-orbiting satellite with a swath width of ~1800 km. Two key factors to enable the accuracy of satellite measurements is a precise evaluation of the wind speed within the L-band footprint and the stability of the instrument or calibration device. The instrument has to be calibrated to an accuracy of better than 0.2 K in terms of temporal variability. This level of precision is believed to be achievable, but does represent an implementation challenge. Extreme care has to be taken for the sensor design and development.
-
-
-# L2PAD SSS prototype processor
-The SSS prototype processor is running on a dedicated massively parallel machine DATARMOR, in order to cope with the dedicated re-griding processor developed for testing purpose until the RGB processor becomes available and can be integrated. The SSS processor takes the L1 brightness temperature from all bands as input (see {numref}`Figure39`) and output L2 SSS on the CIMR swath (see {numref}`Figure40`)
-
-
-
----
-```{figure} Figure39.png
----
-name: Figure39
----
-Simulated CIMR L1 Tb inputs at L band (upper) and C band (lower) in H pol (left) and V pol (right) 
-```
-
----
-```{figure} Figure40.png
----
-name: Figure40
----
-Retrieved SSS from simulated CIMR L1 Tb (left) and reference SSS field (right).
 ```
