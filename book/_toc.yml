@@ -26,6 +26,8 @@ chapters:
   title: Algorithm Performance Assessment 
 - file: cimr_ocean_retrieval
   title: Python notebook for CIMR ocean retrieval
+- file: roadmap
+  title: Roadmap for future ATBD development
 - file: references
   title: References 
 
