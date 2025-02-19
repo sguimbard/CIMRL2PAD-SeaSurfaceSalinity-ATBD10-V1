@@ -2,7 +2,7 @@
 
 To assess the performance of the previously described OWV retrieval algorithm, we used the SCEPS prototype simulator to generate a very large test card (~6000 km × 4000 km), with 1 km resolution including strong SSS gradients due to the Amazon River plume, and strong surface wind speed gradients with the presence of two hurricanes (see {numref}`Figure25`).
 
-As described in RD-2, the simulator consists of a single statically-linked Linux executable program, **cimrProject**, which produces a Level 1b antenna temperature product from input scene brightness information. The program takes as input an EO-CFI orbit definition file (Team, 2022), a file containing the scene brightness temperature in the form of a *test card*, complete GRASP-generated antenna patterns provided by industry, and a file that specifies the sample times at which to produce antenna temperatures. 
+As described in [RD-2], the simulator consists of a single statically-linked Linux executable program, **cimrProject**, which produces a Level 1b antenna temperature product from input scene brightness information. The program takes as input an EO-CFI orbit definition file (Team, 2022), a file containing the scene brightness temperature in the form of a *test card*, complete GRASP-generated antenna patterns provided by industry, and a file that specifies the sample times at which to produce antenna temperatures. 
 
 The scene brightness includes both the isotropic and anisotropic complete modified Stokes vector ($T_h$, $T_p$, $U$, $V$) in the surface polarization basis. The isotropic part can vary with incidence angle, while, for practical reasons in our analyses, the anisotropic part is assumed to be independent of incidence angle.
 
@@ -199,7 +199,7 @@ name: Figure32
 Median (Left) and standard deviation (Right) of the differences between input and retrieved SSS binned as a function of the distance to nearest coasts.
 ```
 
-The closer to the coast, the higher the fresh bias and standard deviation of the $\Delta$SSS.
+The closer to the coast, the higher the fresh bias and standard deviation of the $\Delta$ SSS.
 
 ```{figure} Figure33.png
 ---
@@ -208,7 +208,7 @@ name: Figure33
 Filtered $\Delta$SSS when data with distance to nearest coasts less than 70 km are removed. The histogram of ∆SSS is shown in the right panel.
 ```
 
-While a land-contamination correction will be potentially derived from the future CIMR data (e.g., using the approach of {cite:p}`Meissner2017,meissner2018salinity`, flagging/removing the data within a distance of 70 km from the nearest coasts, will solve most of the land-contamination issues. When removing data within 70 km from the coasts, the statistics of the ∆SSS becomes more gaussian with a significantly reduced STD of ~0.2 pss (see {numref}`Figure33`), compared to ~1.7 pss when considering all data including the SSS retrieved within a band of 70 km from nearest coasts (see {numref}`Figure31`).
+While a land-contamination correction will be potentially derived from the future CIMR data (e.g., using the approach of {cite:p}`Meissner2017,meissner2018salinity`), flagging/removing the data within a distance of 70 km from the nearest coasts, will solve most of the land-contamination issues. When removing data within 70 km from the coasts, the statistics of the ∆SSS becomes more gaussian with a significantly reduced STD of ~0.2 pss (see {numref}`Figure33`), compared to ~1.7 pss when considering all data including the SSS retrieved within a band of 70 km from nearest coasts (see {numref}`Figure31`).
 
 ## SSS Retrieval simulations: comparison with MRD
 
@@ -246,7 +246,7 @@ name: Figure34
 Distribution of uncertainties in the modeling of the V-polarization L-band Tbs at incidence angle of 52° in a) cold sea condition and b) warm sea conditions. The wind speed is moderate with 5 m/s $\leq$ $U_{10}$ < 15 m/s.
 ```
 
-For individual L-band measurements, the square Root of the Sum of Squares (RSS) of quantity is varying from about 0.5 K to 1.2 K, depending on SST and Wind Speed and on polarization. One of the dominant error sources is the surface roughness (e.g., wind speed). The second most impacting effect is NEDT and radiometer stability. Contrarily to V-polarization (see {numref}`Figure35`), the RSS do not increase monotonically with increasing wind speed for H-polarization because the sensitivity to wind speed is higher for low wind speed than for moderate and higher winds (see RD-3). As a reference, 0.1 K corresponds to a wind speed uncertainty of 0.5 m/s- for vertical polarization and 0.25 m/s- for horizontal polarization.
+For individual L-band measurements, the square Root of the Sum of Squares (RSS) of quantity is varying from about 0.5 K to 1.2 K, depending on SST and Wind Speed and on polarization. One of the dominant error sources is the surface roughness (e.g., wind speed). The second most impacting effect is NEDT and radiometer stability. Contrarily to V-polarization (see {numref}`Figure35`), the RSS do not increase monotonically with increasing wind speed for H-polarization because the sensitivity to wind speed is higher for low wind speed than for moderate and higher winds (see [RD-3]). As a reference, 0.1 K corresponds to a wind speed uncertainty of 0.5 m/s- for vertical polarization and 0.25 m/s- for horizontal polarization.
 
 ```{figure} Figure35.png
 ---
@@ -272,7 +272,7 @@ In V-polarization, the accuracy ranges from ~0.9 pss to ~3.5 pss depending on wi
 
 To achieve better accuracy, multiple independent observations are needed. The independent measurements can possibly result from temporal or spatial averaging. The temporal averaging involves the average of data from multiple satellite passes over a given surface grid cell. The revisit time is a few hours for high latitudes and 1 to 3 days for equatorial regions; therefore, it is reasonable to assume that the data from different satellite passes are uncorrelated. In contrast, the spatial averaging over the measurements from adjacent antenna footprints may not reduce the error because most of the geophysical error sources and instrument calibration uncertainty are likely to have a spatial correlation.
 
-For the CIMR conical scanner, a correlation time of a few minutes for the instrument calibration error will make the measurements across the entire swath and along the track of about 1800 km correlated. The only error source that definitely can be improved by spatial averaging is the sensor NEDT, which is random. To be conservative, we assume only the measurements from different satellite passes as independent estimates. Under this assumption, the number of satellite passes required to reduce the error to 0.3 pss has been evaluated in RD-3. It is about 50 for very cold waters with vertical polarization and diminishes to ~5 for equatorial regions.
+For the CIMR conical scanner, a correlation time of a few minutes for the instrument calibration error will make the measurements across the entire swath and along the track of about 1800 km correlated. The only error source that definitely can be improved by spatial averaging is the sensor NEDT, which is random. To be conservative, we assume only the measurements from different satellite passes as independent estimates. Under this assumption, the number of satellite passes required to reduce the error to 0.3 pss has been evaluated in [RD-3]. It is about 50 for very cold waters with vertical polarization and diminishes to ~5 for equatorial regions.
 
 It is indicated in {numref}`Figure37` and {numref}`Figure38` that one month of sampling with the CIMR polar-orbiting L-band instrument results in about 100 passes. This suggests that even during strong sunglint periods (when more than 25$\%$ of the data might be contaminated in the Northern Hemisphere), a monthly averaged SSS of 0.3 pss is achievable with the vertical polarization data under the assumptions stated above. An average of the SSS estimates from both polarizations should yield better accuracy.
 
