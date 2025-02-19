@@ -208,7 +208,7 @@ name: Figure33
 Filtered $\Delta$SSS when data with distance to nearest coasts less than 70 km are removed. The histogram of ∆SSS is shown in the right panel.
 ```
 
-While a land-contamination correction will be potentially derived from the future CIMR data (e.g., using the approach of {cite:p}@Meissner2017;@Meissner2018salinity, flagging/removing the data within a distance of 70 km from the nearest coasts, will solve most of the land-contamination issues. When removing data within 70 km from the coasts, the statistics of the ∆SSS becomes more gaussian with a significantly reduced STD of ~0.2 pss (see {numref}`Figure33`), compared to ~1.7 pss when considering all data including the SSS retrieved within a band of 70 km from nearest coasts (see {numref}`Figure31`).
+While a land-contamination correction will be potentially derived from the future CIMR data (e.g., using the approach of {cite:p}`Meissner2017,meissner2018salinity`, flagging/removing the data within a distance of 70 km from the nearest coasts, will solve most of the land-contamination issues. When removing data within 70 km from the coasts, the statistics of the ∆SSS becomes more gaussian with a significantly reduced STD of ~0.2 pss (see {numref}`Figure33`), compared to ~1.7 pss when considering all data including the SSS retrieved within a band of 70 km from nearest coasts (see {numref}`Figure31`).
 
 ## SSS Retrieval simulations: comparison with MRD
 
