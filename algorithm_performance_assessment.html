@@ -370,12 +370,12 @@
   <section class="tex2jax_ignore mathjax_ignore" id="algorithm-performance-assessment">
 <h1>Algorithm Performance Assessment<a class="headerlink" href="#algorithm-performance-assessment" title="Link to this heading">#</a></h1>
 <p>To assess the performance of the previously described OWV retrieval algorithm, we used the SCEPS prototype simulator to generate a very large test card (~6000 km × 4000 km), with 1 km resolution including strong SSS gradients due to the Amazon River plume, and strong surface wind speed gradients with the presence of two hurricanes (see <a class="reference internal" href="#figure25"><span class="std std-numref">Fig. 22</span></a>).</p>
-<p>As described in RD.2, the simulator consists of a single statically-linked Linux executable program, <strong>cimrProject</strong>, which produces a Level 1b antenna temperature product from input scene brightness information. The program takes as input an EO-CFI orbit definition file (Team, 2022), a file containing the scene brightness temperature in the form of a <em>test card</em>, complete GRASP-generated antenna patterns provided by industry, and a file that specifies the sample times at which to produce antenna temperatures.</p>
+<p>As described in RD-2, the simulator consists of a single statically-linked Linux executable program, <strong>cimrProject</strong>, which produces a Level 1b antenna temperature product from input scene brightness information. The program takes as input an EO-CFI orbit definition file (Team, 2022), a file containing the scene brightness temperature in the form of a <em>test card</em>, complete GRASP-generated antenna patterns provided by industry, and a file that specifies the sample times at which to produce antenna temperatures.</p>
 <p>The scene brightness includes both the isotropic and anisotropic complete modified Stokes vector (<span class="math notranslate nohighlight">\(T_h\)</span>, <span class="math notranslate nohighlight">\(T_p\)</span>, <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(V\)</span>) in the surface polarization basis. The isotropic part can vary with incidence angle, while, for practical reasons in our analyses, the anisotropic part is assumed to be independent of incidence angle.</p>
 <figure class="align-default" id="figure24">
 <img alt="_images/Figure24.png" src="_images/Figure24.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Schematic of the retrieval algorithm assessment using SCEPS*</span><a class="headerlink" href="#figure24" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Schematic of the retrieval algorithm assessment using SCEPS</span><a class="headerlink" href="#figure24" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>A schematic of the overall retrieval algorithm assessment using SCEPS is provided in <a class="reference internal" href="#figure24"><span class="std std-numref">Fig. 21</span></a>. The assessment is based upon these successive steps:</p>
@@ -401,7 +401,7 @@
 <li><p>Maps of error variance amplification factors are computed from the BG weights.</p></li>
 </ul>
 </li>
-<li><p>The noisy simulated resampled CIMR L1b antenna temperature from the scene brightness temperature field are then used for simulation of the future CIMR remapped <em>‘measured L1B Tbs’</em>.</p></li>
+<li><p>The noisy simulated resampled CIMR L1b antenna temperature from the scene brightness temperature field are then used for simulation of the future CIMR remapped measured L1B Tbs.</p></li>
 </ol>
 <section id="geophysical-data-used-to-describe-the-ocean-scene">
 <h2>Geophysical Data Used to Describe the Ocean Scene<a class="headerlink" href="#geophysical-data-used-to-describe-the-ocean-scene" title="Link to this heading">#</a></h2>
@@ -415,12 +415,11 @@
 </section>
 <section id="simulated-toa-tbs-over-the-scene">
 <h2>Simulated TOA Tbs over the Scene<a class="headerlink" href="#simulated-toa-tbs-over-the-scene" title="Link to this heading">#</a></h2>
-<p>Using these geophysical data as input, we generated TOA L- to Ka-band TOA Tbs using the previously described RTM at an ensemble of EIA with values of 0°, 20°, 40°, 50°, 55°, 60°, 70°, 80° including azimuthal harmonics for the full Stokes vector.</p>
-<p><strong>Note:</strong> In the Forward Model simulations, we assumed the anisotropic roughness effects to be similar at all EIA values. ERA5 vertical profiles for Cloud Liquid, Ice Water Content, air temperature, humidity were used to evaluate the atmospheric contributions at each frequency. Land Tbs &gt; 300K are from the SCEPS project (courtesy Carlos Jimenez). Example of such Tb fields are shown in <a class="reference internal" href="#figure26"><span class="std std-numref">Fig. 23</span></a>.</p>
+<p>Using these geophysical data as input, we generated TOA L- to Ka-band TOA Tbs using the previously described RTM at an ensemble of EIA with values of 0°, 20°, 40°, 50°, 55°, 60°, 70°, 80° including azimuthal harmonics for the full Stokes vector. Note: In the Forward Model simulations, we assumed the anisotropic roughness effects to be similar at all EIA values. ERA5 vertical profiles for Cloud Liquid, Ice Water Content, air temperature, humidity were used to evaluate the atmospheric contributions at each frequency. Land Tbs &gt; 300K are from the SCEPS project (courtesy Carlos Jimenez). Example of such Tb fields are shown in <a class="reference internal" href="#figure26"><span class="std std-numref">Fig. 23</span></a>.</p>
 <figure class="align-default" id="figure26">
 <img alt="_images/Figure26.png" src="_images/Figure26.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">(Top Left) L-band H-pol; (Top right) L-band V-pol; (2nd panel from Top Left) C-band H-pol; (2nd panel from Top right) C-band V-pol; (3rd panel from Top Left) X-band H-pol; (3rd panel from Top right) X-band V-pol; (4th panel from Top Left) Ku-band H-pol; (4th panel from Top right) Ku-band V-pol; (Bottom panel, left) Ka-band H-pol; (Bottom panel, right) Ka-band H-pol; based on the Radiative forward model (EIA = 52° for L-band and EIA = 55° for X-Ka band).</span><a class="headerlink" href="#figure26" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">(Left) L-band H-pol; (right) L-band V-pol based on the Radiative forward model (EIA = 52°).</span><a class="headerlink" href="#figure26" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>As described in previous sections, the roughness-induced emission <span class="math notranslate nohighlight">\(\Delta T_p\)</span> can be decomposed into isotropic and anisotropic emission components using a second-order azimuthal harmonic expansion as a function of <span class="math notranslate nohighlight">\(\tilde{\varphi}\)</span>, the relative azimuth between the radiometer look direction and the wind direction.</p>
@@ -441,24 +440,21 @@ U(x_1, x_2, \theta_s) = U_{hs1}(U_{10}) \sin(\tilde{\varphi}) + U_{hs2}(U_{10}) 
 \[
 V(x_1, x_2, \theta_s) = V_{hs1}(U_{10}) \sin(\tilde{\varphi}) + V_{hs2}(U_{10}) \sin(2\tilde{\varphi})
 \]</div>
-<hr class="docutils" />
-<p>As found, only the horizontal and vertical polarization exhibit isotropic contributions (0ᵗʰ order azimuthal harmonics), namely: <span class="math notranslate nohighlight">\(T_{ho}(U_{10})\)</span> and <span class="math notranslate nohighlight">\(T_{vo}(U_{10})\)</span>. The amplitude of these isotropic components is significantly larger than the first-order azimuthal harmonics:  <span class="math notranslate nohighlight">\((T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}))\)</span> and the second-order azimuthal harmonics: <span class="math notranslate nohighlight">\((T_{hc2}(U_{10}), T_{vc2}(U_{10}), U_{hs2}(U_{10}), V_{hs2}(U_{10}))\)</span>. Note that the third <span class="math notranslate nohighlight">\(U\)</span> and fourth <span class="math notranslate nohighlight">\(V\)</span> Stokes vector components are non-zero only because of anisotropic features of the sea surface roughness.</p>
+<p>As found, only the horizontal and vertical polarization exhibit isotropic contributions (0 order azimuthal harmonics), namely: <span class="math notranslate nohighlight">\(T_{ho}(U_{10})\)</span> and <span class="math notranslate nohighlight">\(T_{vo}(U_{10})\)</span>. The amplitude of these isotropic components is significantly larger than the first-order azimuthal harmonics: <span class="math notranslate nohighlight">\((T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}))\)</span> and the second-order azimuthal harmonics: <span class="math notranslate nohighlight">\((T_{hc2}(U_{10}), T_{vc2}(U_{10}), U_{hs2}(U_{10}), V_{hs2}(U_{10}))\)</span>. Note that the third <span class="math notranslate nohighlight">\(U\)</span> and fourth <span class="math notranslate nohighlight">\(V\)</span> Stokes vector components are non-zero only because of anisotropic features of the sea surface roughness.</p>
 <p>For each frequency, SCEPS integrates the harmonic contributions (see <a class="reference internal" href="#figure27"><span class="std std-numref">Fig. 24</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
 T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{10}), T_{vc2}(U_{10}), U_{hs2}(U_{10}), V_{hs2}(U_{10})
 \]</div>
 <p>to total antenna temperature separately and stores them in an extended L1B netCDF file.</p>
-<hr class="docutils" />
 <figure class="align-default" id="figure27">
 <img alt="_images/Figure27.png" src="_images/Figure27.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Example of the TOA scene azimuthal harmonics simulated from the surface wind field in <a class="reference internal" href="#figure25"><span class="std std-numref">Fig. 22</span></a> for L-band, C-band, and X-band. For each frequency panels show (<span class="math notranslate nohighlight">\(T_h\)</span>, <span class="math notranslate nohighlight">\(T_p\)</span>, <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(V\)</span>).</span><a class="headerlink" href="#figure27" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Example of the TOA scene azimuthal harmonics (<span class="math notranslate nohighlight">\(T_h\)</span>, <span class="math notranslate nohighlight">\(T_p\)</span>, <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(V\)</span>) simulated from the surface wind field in <a class="reference internal" href="#figure25"><span class="std std-numref">Fig. 22</span></a> for L-band.</span><a class="headerlink" href="#figure27" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here, we specified wind direction-relative harmonics together with the wind direction at each grid point. Note that the harmonics other than 0 cannot vary with incidence angle and are provided as a single value at each horizontal grid point.</p>
 </section>
-<hr class="docutils" />
 <section id="simulated-instrument-tbs-over-the-scene">
 <h2>Simulated Instrument Tbs Over the Scene<a class="headerlink" href="#simulated-instrument-tbs-over-the-scene" title="Link to this heading">#</a></h2>
 <p>The computation of (noisy) simulated CIMR antenna temperature from the scene brightness temperature field then involves several aspects:</p>
@@ -472,24 +468,21 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 <li><p>Resampling of the TOA Tbs using Backus-Gilbert for all bands except at L-band for which a weighting average is applied,</p></li>
 <li><p>An OZA adjustment is then simply computed by interpolating the test card Tbs (without harmonics) to the reference and actual OZA for each sample/measurement using those values directly without integrating over the antenna pattern. Then, the resampler resamples the interpolated test card Tbs at the OZA values as well as the unadjusted antenna Tbs separately so as to keep track of the adjustment. The OZA correction is then applied after resampling as a simple addition of the resampled adjustment.</p></li>
 </ol>
-<hr class="docutils" />
-<p>Details about each step of the SCEPS simulator can be found in [RD.2]. The simulator includes an orbit propagator to simulate the orbiting satellite positions in time and an antenna geometry routine to simulate the antenna scanning geometry and integrate the brightness fields over the antenna power patterns.</p>
-<p>Noting that most of the power originates near the feed boresight, the integration domain is divided into an inner and an outer domain. These domains are defined for each feed (*see <a class="reference internal" href="#figure28"><span class="std std-numref">Fig. 25</span></a>): The inner domain includes the boresight and extends out to an ellipse corresponding to an azimuthally averaged power 40 dB below the peak (at the feed boresight), where the azimuthal average is computed in the tilted direction cosine coordinate system.  The outer domain covers the rest of the Front Half-Space (FHS) of antenna (containing boresight) in either the tilted or un-tilted coordinate system.</p>
-<hr class="docutils" />
+<p>Details about each step of the SCEPS simulator can be found in [RD-2]. The simulator includes an orbit propagator to simulate the orbiting satellite positions in time and an antenna geometry routine to simulate the antenna scanning geometry and integrate the brightness fields over the antenna power patterns.</p>
+<p>Noting that most of the power originates near the feed boresight, the integration domain is divided into an inner and an outer domain. These domains are defined for each feed (see <a class="reference internal" href="#figure28"><span class="std std-numref">Fig. 25</span></a>): The inner domain includes the boresight and extends out to an ellipse corresponding to an azimuthally averaged power 40 dB below the peak (at the feed boresight), where the azimuthal average is computed in the tilted direction cosine coordinate system. The outer domain covers the rest of the Front Half-Space (FHS) of antenna (containing boresight) in either the tilted or un-tilted coordinate system.</p>
 <figure class="align-default" id="figure28">
 <img alt="_images/Figure28.png" src="_images/Figure28.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 25 </span><span class="caption-text">Inner (left) and outer (right) integration grids in untilted director cosine (u, v) coordinates for L. Only the directivities down to -40 dB and -60 dB below the peak are shown for the inner and outer grids, respectively. The color indicates the antenna pattern power relative to peak.</span><a class="headerlink" href="#figure28" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The CIMR instrument consists of 25 feeds, with one at L-band, 4 at C/X bands, and 8 at Ku/Ka bands. <a class="reference internal" href="#figure29"><span class="std std-numref">Fig. 26</span></a> shows the measurement (full integration time) footprints for a portion of three successive scans for the L-, C-band, X-band, and Ku-band horns. The figure illustrates the extent of overlap between successive footprints both along and across the scan near the swath center. Although overlap can be increased (at the expense of increased noise) along the scan by using individual samples, the across-scan overlap cannot be changed.  To obtain a resolution consistent with the antenna pattern footprint size, distance between neighboring measurements should not exceed half the Half-Power Beam Width (by the Whittaker–Nyquist–Shannon sampling theorem).</p>
-<p>As discussed in [RD.2], this condition is not satisfied across scan in L and Ku bands, but is satisfied in C and X bands. For Ku-band, there is no overlap in the half-power footprints across scan, which may be a limiting factor in the resolution of images obtained from resampled antenna temperatures.</p>
+<p>The CIMR instrument consists of 25 feeds, with one at L-band, 4 at C/X bands, and 8 at Ku/Ka bands. <a class="reference internal" href="#figure29"><span class="std std-numref">Fig. 26</span></a> shows the measurement (full integration time) footprints for a portion of three successive scans for the L-, C-band, X-band, and Ku-band horns. The figure illustrates the extent of overlap between successive footprints both along and across the scan near the swath center. Although overlap can be increased (at the expense of increased noise) along the scan by using individual samples, the across-scan overlap cannot be changed. To obtain a resolution consistent with the antenna pattern footprint size, distance between neighboring measurements should not exceed half the Half-Power Beam Width (by the Whittaker–Nyquist–Shannon sampling theorem).</p>
+<p>As discussed in [RD-2], this condition is not satisfied across scan in L and Ku bands, but is satisfied in C and X bands. For Ku-band, there is no overlap in the half-power footprints across scan, which may be a limiting factor in the resolution of images obtained from resampled antenna temperatures.</p>
 <p>The figure illustrates the extent of overlap between successive footprints both along and across scan near the swath center. Although overlap can be increased (at the expense of increased noise) along scan by using individual samples, the across-scan overlap cannot be changed.</p>
-<hr class="docutils" />
 <figure class="align-default" id="figure29">
 <img alt="_images/Figure29.png" src="_images/Figure29.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">(a): Projection of the L-band, C-band, X-band, and Ku-band feed half-power footprints and boresight locations onto the ground at two closely separated times for three successive scans.</span><a class="headerlink" href="#figure29" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">(a): Projection of the L-band feed half-power footprints and boresight locations onto the ground at two closely separated times for three successive scans.</span><a class="headerlink" href="#figure29" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In SCEPS, the total antenna temperature integral over all space is separated into several parts, with different integration methods for each:</p>
@@ -502,7 +495,6 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 </ul>
 <p>In SCEPS, the default reflector rotation rate is set to the fixed value of 7.8 rpm (clockwise looking towards the instrument along the spin axis from behind the reflector), and the radiometer integration times are set to the values shown in <a class="reference internal" href="#tablerecparam"><span class="std std-numref">Table 8</span></a>.</p>
 <p>SCEPS can be configured to produce antenna temperatures for only the full measurements or for all samples. In the present simulation, there are five samples per measurement.</p>
-<hr class="docutils" />
 <div class="pst-scrollable-table-container"><table class="table" id="tablerecparam">
 <caption><span class="caption-number">Table 8 </span><span class="caption-text">Receiver characteristics. Both the antenna temperature and the effective receiver noise temperature (<span class="math notranslate nohighlight">\(T_{rn}\)</span>) corresponding to the NEDT values are taken to be 150 K in SCEPS. There are five samples per measurement for all bands.</span><a class="headerlink" href="#tablerecparam" title="Link to this table">#</a></caption>
 <thead>
@@ -526,17 +518,14 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 </table>
 </div>
 <p>The reflector rotation rate is sufficiently fast that the antenna patterns move substantially during the measurement integration times, and this must be accounted for when SCEPS is configured to compute antenna temperatures for the full measurements. To do so, SCEPS extends the antenna pattern integration to include integration over the integration time of the receiver.</p>
-<hr class="docutils" />
 <p>For L-band, one uses a weighted average of the original scene <span class="math notranslate nohighlight">\(T_Bs\)</span> based on a Gaussian window of FWHM = 30 km. Examples of simulated TOA brightness temperatures integrated over CIMR antenna patterns for Aft view of two successive ascending passes intercepting the scene are shown in <a class="reference internal" href="#figure30"><span class="std std-numref">Fig. 27</span></a>.</p>
-<hr class="docutils" />
 <p>Note that instrument measurements are simulated from scene <span class="math notranslate nohighlight">\(T_p\)</span> using SCEPS with several options:</p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA + NEDT (constant over the antenna pattern),</p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA without NEDT.</p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA integrated over inner antenna patterns (HBS): Boresight to -40 dB,</p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA integrated over full antenna patterns (TOT): 0 dB to -60 dB,</p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1B TOA <span class="math notranslate nohighlight">\(T_p\)</span> are then remapped into L1C TOA <span class="math notranslate nohighlight">\(T_p\)</span> using Backus-Gilbert interpolation (all frequencies except L-band) or using « gaussian weighted-average » for L-band (do not respect Nyquist sampling)</p>
-<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span>  L1C TOA <span class="math notranslate nohighlight">\(T_p\)</span> are then generated for both Aft and Fore views and for 2 ascending passes intercepting the scene.</p>
-<hr class="docutils" />
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> L1C TOA <span class="math notranslate nohighlight">\(T_p\)</span> are then generated for both Aft and Fore views and for 2 ascending passes intercepting the scene.</p>
 <figure class="align-default" id="figure30">
 <img alt="_images/Figure30.png" src="_images/Figure30.png" />
 <figcaption>
@@ -566,16 +555,16 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 <p><span class="caption-number">Fig. 30 </span><span class="caption-text">Filtered <span class="math notranslate nohighlight">\(\Delta\)</span>SSS when data with distance to nearest coasts less than 70 km are removed. The histogram of ∆SSS is shown in the right panel.</span><a class="headerlink" href="#figure33" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>While a land-contamination correction will be potentially derived from the future CIMR data (e.g., using the approach of Meissner et al. 2017, 2018), flagging/removing the data within a distance of 70 km from the nearest coasts, will solve most of the land-contamination issues. When removing data within 70 km from the coasts, the statistics of the ∆SSS becomes more gaussian with a significantly reduced STD of ~0.2 pss (see <a class="reference internal" href="#figure33"><span class="std std-numref">Fig. 30</span></a>), compared to ~1.7 pss when considering all data including the SSS retrieved within a band of 70 km from nearest coasts (see <a class="reference internal" href="#figure31"><span class="std std-numref">Fig. 28</span></a>).</p>
+<p>While a land-contamination correction will be potentially derived from the future CIMR data (e.g., using the approach of {cite:p}&#64;Meissner2017;&#64;Meissner2018salinity, flagging/removing the data within a distance of 70 km from the nearest coasts, will solve most of the land-contamination issues. When removing data within 70 km from the coasts, the statistics of the ∆SSS becomes more gaussian with a significantly reduced STD of ~0.2 pss (see <a class="reference internal" href="#figure33"><span class="std std-numref">Fig. 30</span></a>), compared to ~1.7 pss when considering all data including the SSS retrieved within a band of 70 km from nearest coasts (see <a class="reference internal" href="#figure31"><span class="std std-numref">Fig. 28</span></a>).</p>
 </section>
 <section id="sss-retrieval-simulations-comparison-with-mrd">
 <h2>SSS Retrieval simulations: comparison with MRD<a class="headerlink" href="#sss-retrieval-simulations-comparison-with-mrd" title="Link to this heading">#</a></h2>
 <p>As stated in the CIMR MRD, the mission objectives for SSS retrieval are the following:
-“SEC-OBJ-9. Measure Sea Surface Salinity (SSS) over the global ocean from space [AD-3],[AD-4] with a target gridded spatial resolution of 40 km and uncertainty <span class="math notranslate nohighlight">\(\leq\)</span>0.3 pss over monthly time-scales [AD-3]”</p>
-<p>The accuracy of weekly or monthly SSS products from orbiting satellites depends on the number of satellite passes over a given grid cell within the period of time. To evaluate such number for the CIMR L-band data collected over one month, in the MACRAD project [RD.3], we have conducted a sampling analysis with the satellite instrument retrieval simulator for the mission: the CIMR SCEPS. We estimated the number of L1B samples per day in 0.36°x 0.36° rectangular grid (~40km resolution) boxes for the complete month of January 2029. We reproduced some of the results hereafter.</p>
+“SEC-OBJ-9. Measure Sea Surface Salinity (SSS) over the global ocean from space [RD-3],[RD-4] with a target gridded spatial resolution of 40 km and uncertainty <span class="math notranslate nohighlight">\(\leq\)</span>0.3 pss over monthly time-scales [RD-3]”</p>
+<p>The accuracy of weekly or monthly SSS products from orbiting satellites depends on the number of satellite passes over a given grid cell within the period of time. To evaluate such number for the CIMR L-band data collected over one month, in the MACRAD project [RD-3], we have conducted a sampling analysis with the satellite instrument retrieval simulator for the mission: the CIMR SCEPS. We estimated the number of L1B samples per day in 0.36°x 0.36° rectangular grid (~40km resolution) boxes for the complete month of January 2029. We reproduced some of the results hereafter.</p>
 <section id="error-estimates-for-individual-cimr-l2-sss">
 <h3>Error Estimates for individual CIMR L2 SSS<a class="headerlink" href="#error-estimates-for-individual-cimr-l2-sss" title="Link to this heading">#</a></h3>
-<p>In the following, we first estimated the accuracy of the CIMR satellite L2 SSS measurements from the effects of the various error sources at a nominal incidence angle of 52° that were described in detail in [RD.3]. Table 1 summarizes the influence of various geophysical error sources for four water temperature ranges:</p>
+<p>In the following, we first estimated the accuracy of the CIMR satellite L2 SSS measurements from the effects of the various error sources at a nominal incidence angle of 52° that were described in detail in [RD-3]. Table 1 summarizes the influence of various geophysical error sources for four water temperature ranges:</p>
 <ol class="arabic simple">
 <li><p>Very low SSTs with -4°C &lt; <span class="math notranslate nohighlight">\(T_s\)</span> &lt; 0°C</p></li>
 <li><p>Low SSTs: 0°C &lt; <span class="math notranslate nohighlight">\(T_s\)</span> &lt; 10°C</p></li>
@@ -588,18 +577,16 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 <li><p>Moderate wind speed: <span class="math notranslate nohighlight">\(5 \leq U_{10} &lt; 15\)</span> m/s</p></li>
 <li><p>High wind speed: <span class="math notranslate nohighlight">\(U_{10} &gt; 15\)</span> m/s</p></li>
 </ol>
-<p>In [RD.3], we performed sensitivity analyses from the RTM presented in this ATBD. For each temperature and wind speed range, the estimated brightness temperature errors were listed for <span class="math notranslate nohighlight">\(T_v\)</span>, <span class="math notranslate nohighlight">\(T_h\)</span>, and <span class="math notranslate nohighlight">\((T_v + T_h)/2\)</span>. The estimates for the average brightness temperature <span class="math notranslate nohighlight">\((T_v + T_h)/2\)</span> were included because it is insensitive to the Faraday rotation.</p>
+<p>In [RD-3], we performed sensitivity analyses from the RTM presented in this ATBD. For each temperature and wind speed range, the estimated brightness temperature errors were listed for <span class="math notranslate nohighlight">\(T_v\)</span>, <span class="math notranslate nohighlight">\(T_h\)</span>, and <span class="math notranslate nohighlight">\((T_v + T_h)/2\)</span>. The estimates for the average brightness temperature <span class="math notranslate nohighlight">\((T_v + T_h)/2\)</span> were included because it is insensitive to the Faraday rotation.</p>
 <p>We provided the sensitivity of the brightness temperatures to SSS and SST, indicating a varying degree of sensitivity versus polarization and water temperature, as well as the sensitivity to surface wind speed and direction. We also estimated the sensitivity to air surface temperature, surface pressure, columnar water vapor content, and cloud liquid water content. Additionally, we provided the residual brightness temperature errors after data corrections or under an assumed threshold for data flags related to external sources (e.g., galactic and solar glints). Land-sea contamination was filtered (e.g., all data within a 70 km band from coasts were not considered).</p>
 <p>The net effect of geophysical errors is described in <a class="reference internal" href="#figure34"><span class="std std-numref">Fig. 31</span></a> under the assumption that all geophysical error sources are uncorrelated.</p>
-<hr class="docutils" />
 <figure class="align-default" id="figure34">
 <img alt="_images/Figure34.png" src="_images/Figure34.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 31 </span><span class="caption-text">Distribution of uncertainties in the modeling of the V-polarization L-band Tbs at incidence angle of 52° in a) cold sea condition and b) warm sea conditions. The wind speed is moderate with 5 m/s <span class="math notranslate nohighlight">\(\leq\)</span> <span class="math notranslate nohighlight">\(U_{10}\)</span> &lt; 15 m/s.</span><a class="headerlink" href="#figure34" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>For individual L-band measurements, the square Root of the Sum of Squares (RSS) of quantity is varying from about 0.5 K to 1.2 K, depending on SST and Wind Speed and on polarization. One of the dominant error sources is the surface roughness (e.g., wind speed). The second most impacting effect is NEDT and radiometer stability. Contrarily to V-polarization (see <a class="reference internal" href="#figure35"><span class="std std-numref">Fig. 32</span></a>), the RSS do not increase monotonically with increasing wind speed for H-polarization because the sensitivity to wind speed is higher for low wind speed than for moderate and higher winds (see RD.3). As a reference, 0.1 K corresponds to a wind speed uncertainty of 0.5 m/s- for vertical polarization and 0.25 m/s- for horizontal polarization.</p>
-<hr class="docutils" />
+<p>For individual L-band measurements, the square Root of the Sum of Squares (RSS) of quantity is varying from about 0.5 K to 1.2 K, depending on SST and Wind Speed and on polarization. One of the dominant error sources is the surface roughness (e.g., wind speed). The second most impacting effect is NEDT and radiometer stability. Contrarily to V-polarization (see <a class="reference internal" href="#figure35"><span class="std std-numref">Fig. 32</span></a>), the RSS do not increase monotonically with increasing wind speed for H-polarization because the sensitivity to wind speed is higher for low wind speed than for moderate and higher winds (see RD-3). As a reference, 0.1 K corresponds to a wind speed uncertainty of 0.5 m/s- for vertical polarization and 0.25 m/s- for horizontal polarization.</p>
 <figure class="align-default" id="figure35">
 <img alt="_images/Figure35.png" src="_images/Figure35.png" />
 <figcaption>
@@ -608,7 +595,6 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 </figure>
 <p>The sensor errors include the calibration errors and the radiometer noise-equivalent-delta-T (NEDT). The instrument calibration stability does not include the bias of the instrument calibration errors, and only accounts for the temporal variability of the instrument calibration. It is assumed that the instrument calibration bias is a constant and hence can be removed by a comparative analysis of in-situ measurements. The dominant error sources are the antenna pointing angle, antenna emissivities, and the stability of the calibration device, such as the noise source, for the electronics. The radiometer NEDT is assumed to be 0.3 K for each polarization.</p>
 <p>As found, the vertical polarization outperforms the other polarization and combinations because of its superior sensitivity to salinity. In moderate SST and wind conditions, it is about ~1 pss. It increases with increasing wind speed and decreasing SST. The average brightness temperature <span class="math notranslate nohighlight">\((T_v + T_h)/2\)</span> has the advantage of a negligible Faraday rotation error, but its performance is slightly worse than the vertical polarization because of a slight degradation of SSS sensitivity.</p>
-<hr class="docutils" />
 <figure class="align-default" id="figure36">
 <img alt="_images/Figure36.png" src="_images/Figure36.png" />
 <figcaption>
@@ -620,16 +606,14 @@ T_{hc1}(U_{10}), T_{vc1}(U_{10}), U_{hs1}(U_{10}), V_{hs1}(U_{10}), T_{hc2}(U_{1
 <section id="error-estimates-for-level-3-cimr-sss">
 <h3>Error Estimates for Level 3 CIMR SSS<a class="headerlink" href="#error-estimates-for-level-3-cimr-sss" title="Link to this heading">#</a></h3>
 <p>To achieve better accuracy, multiple independent observations are needed. The independent measurements can possibly result from temporal or spatial averaging. The temporal averaging involves the average of data from multiple satellite passes over a given surface grid cell. The revisit time is a few hours for high latitudes and 1 to 3 days for equatorial regions; therefore, it is reasonable to assume that the data from different satellite passes are uncorrelated. In contrast, the spatial averaging over the measurements from adjacent antenna footprints may not reduce the error because most of the geophysical error sources and instrument calibration uncertainty are likely to have a spatial correlation.</p>
-<p>For the CIMR conical scanner, a correlation time of a few minutes for the instrument calibration error will make the measurements across the entire swath and along the track of about 1800 km correlated. The only error source that definitely can be improved by spatial averaging is the sensor NEDT, which is random. To be conservative, we assume only the measurements from different satellite passes as independent estimates. Under this assumption, the number of satellite passes required to reduce the error to 0.3 pss has been evaluated in [RD.3]. It is about 50 for very cold waters with vertical polarization and diminishes to ~5 for equatorial regions.</p>
-<p>It is indicated in <a class="reference internal" href="#figure37"><span class="std std-numref">Fig. 34</span></a> and <a class="reference internal" href="#figure38"><span class="std std-numref">Fig. 35</span></a> that one month of sampling with the CIMR polar-orbiting L-band instrument results in about 100 passes. This suggests that even during strong sunglint periods (when more than 25% of the data might be contaminated in the Northern Hemisphere), a monthly averaged SSS of 0.3 pss is achievable with the vertical polarization data under the assumptions stated above. An average of the SSS estimates from both polarizations should yield better accuracy.</p>
-<hr class="docutils" />
+<p>For the CIMR conical scanner, a correlation time of a few minutes for the instrument calibration error will make the measurements across the entire swath and along the track of about 1800 km correlated. The only error source that definitely can be improved by spatial averaging is the sensor NEDT, which is random. To be conservative, we assume only the measurements from different satellite passes as independent estimates. Under this assumption, the number of satellite passes required to reduce the error to 0.3 pss has been evaluated in RD-3. It is about 50 for very cold waters with vertical polarization and diminishes to ~5 for equatorial regions.</p>
+<p>It is indicated in <a class="reference internal" href="#figure37"><span class="std std-numref">Fig. 34</span></a> and <a class="reference internal" href="#figure38"><span class="std std-numref">Fig. 35</span></a> that one month of sampling with the CIMR polar-orbiting L-band instrument results in about 100 passes. This suggests that even during strong sunglint periods (when more than 25<span class="math notranslate nohighlight">\(\%\)</span> of the data might be contaminated in the Northern Hemisphere), a monthly averaged SSS of 0.3 pss is achievable with the vertical polarization data under the assumptions stated above. An average of the SSS estimates from both polarizations should yield better accuracy.</p>
 <figure class="align-default" id="figure37">
 <img alt="_images/Figure37.png" src="_images/Figure37.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 34 </span><span class="caption-text">Total number of L-band L1B samples in 0.36°x 0.36° for 1 day (top panel), 1 week (middle panel) and 1 month (bottom panel).</span><a class="headerlink" href="#figure37" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<hr class="docutils" />
 <figure class="align-default" id="figure38">
 <img alt="_images/Figure38.png" src="_images/Figure38.png" />
 <figcaption>

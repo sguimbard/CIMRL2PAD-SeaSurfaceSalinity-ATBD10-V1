@@ -788,11 +788,11 @@ $$
 \end{eqnarray}
 $$ (eqatm24)
 
-and the nonresonant term is given by the sum of a relaxation spectrum term $S_\circ F_\circ$ and a term associated with pressure-induced $N_2$ absorption (which makes a small contribution above 100 GHz), $S_nF_n$:
+and the nonresonant term is given by the sum of a relaxation spectrum term $S_0 F_0$ and a term associated with pressure-induced $N_2$ absorption (which makes a small contribution above 100 GHz), $S_nF_n$:
 
 $$
 \begin{eqnarray}
-\tilde{N}_n = S_\circ F_\circ + i S_n F_n
+\tilde{N}_n = S_0 F_0 + i S_n F_n
 \quad\mbox{[ppm]},
 \end{eqnarray}
 $$ (eqatm25)
@@ -801,8 +801,8 @@ with
 
 $$
 \begin{eqnarray}
-S_\circ &=& 6.14\times10^{-5} p_d T_r^2\quad\mbox{[ppm]},\\
-F_\circ &=& -f\left[f+i0.56\times10^{-3}(p_d+e)T_r^{0.8}\right]^{-1},\\
+S_0 &=& 6.14\times10^{-5} p_d T_r^2\quad\mbox{[ppm]},\\
+F_0 &=& -f\left[f+i0.56\times10^{-3}(p_d+e)T_r^{0.8}\right]^{-1},\\
 S_n   &=& 1.4\times10^{-12} p_d^2T_r^{3.5}\quad\mbox{[ppm]},\\
 F_n   &=& f\left[1 + 1.93\times10^{-5}f^{1.5}\right]^{-1}.
 \end{eqnarray}
@@ -1007,7 +1007,7 @@ $$
 \end{eqnarray}
 $$ (eqatm45a)
 
-where $R$ is the rain rate in [mm/h], $z$ the altitude, $y=f/f_R$, $f_R=53-R(0.37-0.0015R)$, $c_R=x_1 and $z=x_2\cdot f \cdot y_2$, where $x_1$=3.51e-4, $y_1$=1.03, $x_2$=0.851 and $y_2$=0.158 for f=1.4 GHz.
+where $R$ is the rain rate in [mm/h], $z$ the altitude, $y=f/f_R$, $f_R=53-R(0.37-0.0015R)$, $c_R=x_1$ and $z=x_2\cdot f \cdot y_2$, where $x_1$=3.51e-4, $y_1$=1.03, $x_2$=0.851 and $y_2$=0.158 for f=1.4 GHz.
 
 
 ### Effects on the Stokes Vector
@@ -2109,7 +2109,7 @@ $$
 T_{ssp}(θ_o,\phi_o,\theta_s,\phi_s )\simeq (\tau_d \tau_v ) \frac{\bar{T}_{sun}(t)Ω_{sun}}{4π\cos⁡{(θ_s)}}\cdot [σ_{pp}(θ_o,\phi_o,\theta_s,\phi_s )+σ_{pq} (\theta_o,\phi_o,\theta_s,\phi_s)]
 $$ (eq150)
 
-where $T_{sun}$ is the brightness temperature of the sun averaged over the solar disc at 1.4 GHz and at time $t$, $\Omega_{sun}=2\pi\left[1-\cos{(\frac{\beta}{2})}\right]=8.2 \times 10^{-5} sr$ is the solid angle of the sun at L-band. The incidence and azimuth angles from the scattering surface toward the sun are $θ_o$ and $\phi_o$, respectively, and the corresponding angles towards the satellite are $θ_s$ and $\phi_s$. Atmospheric attenutaion on the downward path from the sun to the sea surface is accounted for by the factor $\tau_d \tau_v$ expressed in subsection [Atmospheric contributions at L-band](#atmospheric-contributions-at-l-band).
+where $T_{sun}$ is the brightness temperature of the sun averaged over the solar disc at 1.4 GHz and at time $t$, $\Omega_{sun}=2\pi\left[1-\cos{(\frac{\beta}{2})}\right]=8.2 \times 10^{-5} sr$ is the solid angle of the sun at L-band. The incidence and azimuth angles from the scattering surface toward the sun are $θ_o$ and $\phi_o$, respectively, and the corresponding angles towards the satellite are $θ_s$ and $\phi_s$. Atmospheric attenuation on the downward path from the sun to the sea surface is accounted for by the factor $\tau_d \tau_v$ expressed in subsection [Atmospheric contributions at L-band](#atmospheric-contributions-at-l-band).
 
 
 ### Bistatic scattering cross-sections of the rough sea surface
